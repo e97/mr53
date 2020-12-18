@@ -1,0 +1,1605 @@
+U-Boot 2012.07-gd040ed5-dirty [local,local] (Mar 29 2016 - 08:05:21)
+
+DRAM:  235 MiB
+cdp: machid 4971
+NAND:  128 MiB
+Using default environment
+
+In:    serial
+Out:   serial
+Err:   serial
+late_init: machid 4971
+Net:   No ethernet found.
+
+NAND read: device 0 offset 0x2c40000, size 0xa80000
+ 11010048 bytes read: OK
+bootm 0x42000000#config@3## Booting kernel from FIT Image at 42000000 ...
+   Using 'config@3' configuration
+   Trying 'kernel@1' kernel subimage
+     Description:  Boot Kernel
+     Type:         Kernel Image
+     Compression:  uncompressed
+     Data Start:   0x420000f8
+     Data Size:    1557336 Bytes = 1.5 MiB
+     Architecture: ARM
+     OS:           Linux
+     Load Address: 0x41508000
+     Entry Point:  0x41508000
+     Hash algo:    sha1
+     Hash value:   f75f60336909a51c1a5c81b9e94a535c4c7373bb
+   Verifying Hash Integrity ... sha1+ OK
+## Loading init Ramdisk from FIT Image at 42000000 ...
+   Using 'config@3' configuration
+   Trying 'ramdisk@1' ramdisk subimage
+     Description:  Cryptid Ramdisk
+     Type:         RAMDisk Image
+     Compression:  lzma compressed
+     Data Start:   0x4217c53c
+     Data Size:    405740 Bytes = 396.2 KiB
+     Architecture: ARM
+     Hash algo:    sha1
+     Hash value:   9ef6f9d54402eef6582ca573a693c77f72ff3c05
+   Verifying Hash Integrity ... sha1+ OK
+## Flattened Device Tree from FIT Image at 42000000
+   Using 'config@3' configuration
+   Trying 'fdt@3' FDT blob subimage
+     Description:  MR53 Device Tree
+     Type:         Flat Device Tree
+     Compression:  uncompressed
+     Data Start:   0x421e2750
+     Data Size:    7248 Bytes = 7.1 KiB
+     Architecture: ARM
+     Hash algo:    sha1
+     Hash value:   fc1af865589d0870447f3a40d1e37955f7638647
+   Verifying Hash Integrity ... sha1+ OK
+   Loading FDT from 0x421e2750 to 0x41501000
+   Booting using the fdt blob at 0x41501000
+   Loading Kernel Image ... OK
+OK
+   Loading Ramdisk to 4ea9c000, end 4eaff0ec ... OK
+   Loading Device Tree to 4ea97000, end 4ea9bc4f ... OK
+Using machid 0x136b from environment
+
+Starting kernel ...
+
+[    0.000000] Booting Linux on physical CPU 0
+[    0.000000] Linux version 3.4.113 (aacharya@sf100.meraki.com) (gcc version 4.8.3 (GCC) ) #4 SMP Tue Sep 4 11:24:13 PDT 2018
+[    0.000000] CPU: ARMv7 Processor [512f04d0] revision 0 (ARMv7), cr=10c5387d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, PIPT instruction cache
+[    0.000000] Machine: Qualcomm Atheros AP160 reference board, model: Meraki MR53 (Sasquatch)
+[    0.000000] msm_reserve_memory: 0x44600000, 0x200000
+[    0.000000] memory pool 3 (start 5fe00000 size 100000) initialized
+[    0.000000] Memory policy: ECC disabled, Data cache writealloc
+[    0.000000] smem_find(137, 80): wrong size 72
+[    0.000000] socinfo_init: v6, id=204, ver=2.0, raw_id=2313, raw_ver=2313, hw_plat=0,  hw_plat_ver=65536
+[    0.000000]  accessory_chip=0 hw_plat_subtype=0
+[    0.000000] PERCPU: Embedded 8 pages/cpu @c0b16000 s10240 r8192 d14336 u32768
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 123692
+[    0.000000] Kernel command line: ubi.mtd=ubi ubi.mtd=art root=/dev/ram rw console=ttyHSL1,115200n8 maxcpus=0 qcom-wdt.clear_reason=0 loader=u-boot part=bootkernel2
+[    0.000000] PID hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.000000] Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+[    0.000000] Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+[    0.000000] Memory: 49MB 438MB = 487MB total
+[    0.000000] Memory: 486420k/489492k available, 12268k reserved, 0K highmem
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+[    0.000000]     vmalloc : 0xdf000000 - 0xff000000   ( 512 MB)
+[    0.000000]     lowmem  : 0xc0000000 - 0xdea00000   ( 490 MB)
+[    0.000000]     pkmap   : 0xbfe00000 - 0xc0000000   (   2 MB)
+[    0.000000]     modules : 0xbf000000 - 0xbfe00000   (  14 MB)
+[    0.000000]       .text : 0xc0008000 - 0xc04d3000   (4908 kB)
+[    0.000000]       .init : 0xc0500000 - 0xc0602800   (1034 kB)
+[    0.000000]       .data : 0xc0604000 - 0xc06710e0   ( 437 kB)
+[    0.000000]        .bss : 0xc0671104 - 0xc070f84c   ( 634 kB)
+[    0.000000] SLUB: Genslabs=11, HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+[    0.000000] Hierarchical RCU implementation.
+[    0.000000] NR_IRQS:921
+[    0.000000] sched_clock: 32 bits at 32kHz, resolution 31240ns, wraps every 134175798ms
+[    0.000000] Console: colour dummy device 80x30
+[    0.150421] Calibrating delay using timer specific routine.. 12.55 BogoMIPS (lpj=62791)
+[    0.150452] pid_max: default: 32768 minimum: 301
+[    0.150765] Mount-cache hash table entries: 512
+[    0.154045] CPU: Testing write buffer coherency: ok
+[    0.154233] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+[    0.154233] hw perfevents: enabled with ARMv7 Krait PMU driver, 5 counters available
+[    0.154326] Setting up static identity map for 0x418089f8 - 0x41808a80
+[    0.154920] Brought up 1 CPUs
+[    0.154920] SMP: Total of 1 processors activated (12.55 BogoMIPS).
+[    0.155888] devtmpfs: initialized
+[    0.169728] dummy: 
+[    0.170196] NET: Registered protocol family 16
+[    0.170915] AXI: msm_bus_fabric_init_driver(): msm_bus_fabric_init_driver
+[    0.173039] meminfo_init: smem ram ptable found: ver: 0 len: 5
+[    0.173039] Found 1 memory banks grouped into 8 memory regions
+[    0.173289] smem_find(137, 80): wrong size 72
+[    0.173320] socinfo_init: v6, id=204, ver=2.0, raw_id=2313, raw_ver=2313, hw_plat=0,  hw_plat_ver=65536
+[    0.173320]  accessory_chip=0 hw_plat_subtype=0
+[    0.173383] msm_rpm_init: RPM firmware 3.0.16777342
+[    0.179850] clk_tbl_nss - loaded
+[    0.208466] gpiochip_add: registered GPIOs 0 to 151 on device: msmgpio
+[    0.210028] No ATAGs?
+[    0.210059] hw-breakpoint: found 5 (+1 reserved) breakpoint and 4 watchpoint registers.
+[    0.210059] hw-breakpoint: maximum watchpoint size is 8 bytes.
+[    0.210402] msm_dmov_memcpy_init: Success
+[    0.216776] sps:BAM 0x12244000 enabled: ver:0x5, number of pipes:20
+[    0.216807] sps:BAM 0x12244000 is registered.
+[    0.217025] sps:sps is ready.
+[    0.233770] bio: create slab <bio-0> at 0
+[    0.237363] i2c-gpio 1.i2c: using pins 8 (SDA) and 9 (SCL)
+[    0.237644] i2c-gpio 2.i2c: using pins 12 (SDA) and 13 (SCL)
+[    0.239081] Switching to clocksource gp_timer
+[    0.260918] NET: Registered protocol family 2
+[    0.268978] IP route cache hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.269665] TCP established hash table entries: 16384 (order: 5, 131072 bytes)
+[    0.269853] TCP bind hash table entries: 16384 (order: 5, 131072 bytes)
+[    0.270009] TCP: Hash tables configured (established 16384 bind 16384)
+[    0.270040] TCP: reno registered
+[    0.270040] UDP hash table entries: 256 (order: 1, 8192 bytes)
+[    0.270071] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
+[    0.270509] NET: Registered protocol family 1
+[    0.270759] Unpacking initramfs...
+[    0.509996] Freeing initrd memory: 396K
+[    0.517869] Detected 5 counters on the L2CC PMU.
+[    0.525866] smd: register irq failed on wcnss_a11
+[    0.525898] smd: deregistering IRQs
+[    0.525929] SMD: smd_core_platform_init() failed
+[    0.528053] smem_find(427, 88): wrong size 24
+[    0.528084] smem_find(427, 96): wrong size 24
+[    0.528084] get_bootconfig_partition: no dual boot v2 info in shared memory
+[    0.690534] acpuclk-ipq806x acpuclk-ipq806x: SPEED BIN: 0
+[    0.690534] acpuclk-ipq806x acpuclk-ipq806x: ACPU PVS: 1
+[    0.694345] acpuclk-ipq806x acpuclk-ipq806x: CPU0: 6 frequencies supported
+[    0.694376] acpuclk-ipq806x acpuclk-ipq806x: CPU1: 6 frequencies supported
+[    0.705654] msm_rpm_log_probe: OK
+[    0.898344] msgmni has been set to 950
+[    0.907622] NET: Registered protocol family 38
+[    0.907653] io scheduler noop registered
+[    0.907685] io scheduler deadline registered (default)
+[    0.908216] Serial: 8250/16550 driver, 2 ports, IRQ sharing disabled
+[    0.924304] msm_serial_hs module loaded
+[    0.924492] msm_serial_hsl: detected port #1
+[    0.924617] msm_serial_hsl.1: ttyHSL1 at MMIO 0x16340000 (irq = 184) is a MSM
+[    0.925023] msm_serial_hsl: console setup on port #1
+[    1.472977] console [ttyHSL1] enabled
+[    1.481724] msm_serial_hsl: detected port #0
+[    1.485067] msm_serial_hsl.0: ttyHSL0 at MMIO 0x12450000 (irq = 225) is a MSM
+[    1.497313] msm_serial_hsl: driver initialized
+[    1.500937] at24 1-0052: 8192 byte 24c64 EEPROM, writable, 32 bytes/write
+[    1.524617] msm_nand_probe: phys addr 0x1ac00000 
+[    1.528303] msm_nand_probe: dmac 0x3
+[    1.531958] msm_nand_probe: allocated dma buffer at ffdfe000, dma_addr 5f9fc000
+[    1.544860] status: 20
+[    1.546173] nandid: 1580a101 maker 01 device a1
+[    1.550734] ONFI probe : Found an ONFI compliant device S34MS01G2           
+[    1.557888] Found a supported NAND device
+[    1.561824] NAND Controller ID : 0x4030
+[    1.565604] NAND Device ID  : 0x1580a101
+[    1.569634] Buswidth : 8 Bits
+[    1.572477] Density  : 128 MByte
+[    1.575695] Pagesize : 2048 Bytes
+[    1.578975] Erasesize: 131072 Bytes
+[    1.582474] Oobsize  : 64 Bytes
+[    1.585598] CFG0 Init  : 0xa8d408c0
+[    1.589097] CFG1 Init  : 0x0004745c
+[    1.592533] ECCBUFCFG  : 0x00000203
+[    1.596126] 14 ofpart partitions found on MTD device msm_nand
+[    1.601780] Creating 14 MTD partitions on "msm_nand":
+[    1.606779] 0x000000040000-0x000000180000 : "mibib"
+[    1.622524] 0x000000000000-0x000000040000 : "sbl1"
+[    1.640955] 0x000000180000-0x0000002c0000 : "sbl2"
+[    1.659637] 0x0000002c0000-0x000000540000 : "sbl3"
+[    1.679194] 0x000000540000-0x000000660000 : "ddrconfig"
+[    1.698250] 0x000000660000-0x000000780000 : "ssd"
+[    1.716932] 0x000000780000-0x000000a00000 : "tz"
+[    1.736394] 0x000000a00000-0x000000c80000 : "rpm"
+[    1.755982] 0x000001fc0000-0x000002140000 : "u-boot"
+[    1.775195] 0x0000021c0000-0x000002c40000 : "bootkernel1"
+[    1.803842] 0x000002c40000-0x0000036c0000 : "bootkernel2"
+[    1.832458] 0x0000036c0000-0x000007d80000 : "ubi"
+[    1.923367] 0x000007d80000-0x000007f80000 : "art"
+[    1.942486] 0x000000000000-0x000008000000 : "all"
+[    2.107622] UBI: attaching mtd11 to ubi0
+[    2.110590] UBI: physical eraseblock size:   131072 bytes (128 KiB)
+[    2.116776] UBI: logical eraseblock size:    126976 bytes
+[    2.122211] UBI: smallest flash I/O unit:    2048
+[    2.126835] UBI: VID header offset:          2048 (aligned 2048)
+[    2.132895] UBI: data offset:                4096
+[    2.570321] UBI: max. sequence number:       842
+[    2.597500] UBI: attached mtd11 to ubi0
+[    2.600406] UBI: MTD device name:            "ubi"
+[    2.605092] UBI: MTD device size:            70 MiB
+[    2.609965] UBI: number of good PEBs:        566
+[    2.614557] UBI: number of bad PEBs:         0
+[    2.618962] UBI: number of corrupted PEBs:   0
+[    2.623430] UBI: max. allowed volumes:       128
+[    2.627991] UBI: wear-leveling threshold:    4096
+[    2.632708] UBI: number of internal volumes: 1
+[    2.637113] UBI: number of user volumes:     4
+[    2.641580] UBI: available PEBs:             137
+[    2.646141] UBI: total number of reserved PEBs: 429
+[    2.651015] UBI: number of PEBs reserved for bad PEB handling: 5
+[    2.656982] UBI: max/mean erase counter: 6/1
+[    2.661262] UBI: image sequence number:  762311168
+[    2.666073] UBI: background thread "ubi_bgt0d" started, PID 790
+[    2.673726] UBI: attaching mtd12 to ubi1
+[    2.676601] UBI: physical eraseblock size:   131072 bytes (128 KiB)
+[    2.682911] UBI: logical eraseblock size:    126976 bytes
+[    2.688253] UBI: smallest flash I/O unit:    2048
+[    2.692970] UBI: VID header offset:          2048 (aligned 2048)
+[    2.698906] UBI: data offset:                4096
+[    2.716213] UBI: max. sequence number:       3
+[    2.732208] UBI: attached mtd12 to ubi1
+[    2.735020] UBI: MTD device name:            "art"
+[    2.739862] UBI: MTD device size:            2 MiB
+[    2.744579] UBI: number of good PEBs:        16
+[    2.749109] UBI: number of bad PEBs:         0
+[    2.753514] UBI: number of corrupted PEBs:   0
+[    2.757950] UBI: max. allowed volumes:       128
+[    2.762574] UBI: wear-leveling threshold:    4096
+[    2.767228] UBI: number of internal volumes: 1
+[    2.771696] UBI: number of user volumes:     1
+[    2.776069] UBI: available PEBs:             0
+[    2.780537] UBI: total number of reserved PEBs: 16
+[    2.785285] UBI: number of PEBs reserved for bad PEB handling: 2
+[    2.791315] UBI: max/mean erase counter: 2/1
+[    2.795532] UBI: image sequence number:  1525592129
+[    2.800562] UBI: background thread "ubi_bgt1d" started, PID 795
+[    2.875351] bonding: Ethernet Channel Bonding Driver: v3.7.1 (April 27, 2011)
+[    2.993064] i2c /dev entries driver
+[    3.005779] restart_reason wdt:0 r:35573259
+[    3.015901] cpuidle: using governor ladder
+[    3.018962] cpuidle: using governor menu
+[    3.048266] meraki-config board-data.9: Meraki config device loaded
+[    3.058512] TCP: bic registered
+[    3.060699] TCP: cubic registered
+[    3.063917] TCP: westwood registered
+[    3.067478] TCP: htcp registered
+[    3.070727] NET: Registered protocol family 17
+[    3.075164] 8021q: 802.1Q VLAN Support v1.8
+[    3.079412] VFP support v0.3: implementor 51 architecture 64 part 4d variant 2 rev 0
+[    3.087035] Registering SWP/SWPB emulation handler
+[    3.091846] clock_late_init: Removing enables held for handed-off clocks
+[    3.108965] ipq_nss_get_mac_addr: MAC[0]: ff:ff:ff:ff:ff:ff
+[    3.114839] ipq_nss_get_mac_addr: MAC[1]: ff:ff:ff:ff:ff:ff
+[    3.120212] ipq_nss_get_mac_addr: MAC[2]: ff:ff:ff:ff:ff:ff
+[    3.125179] ipq_nss_get_mac_addr: MAC[3]: ff:ff:ff:ff:ff:ff
+[    3.130677] no pmic restart interrupt specified
+[    3.141112] devtmpfsþ[    3.143705] Freeing init memory: 1032K
+mount: mounting none on /dev failed: Device or resource busy
+[    3.291440] UBIFS: recovery needed
+[    3.381287] UBIFS: recovery completed
+[    3.383911] UBIFS: mounted UBI device 0, volume 3, name "storage"
+[    3.390003] UBIFS: file system size:   7364608 bytes (7192 KiB, 7 MiB, 58 LEBs)
+[    3.397282] UBIFS: journal size:       1015809 bytes (992 KiB, 0 MiB, 6 LEBs)
+[    3.404436] UBIFS: media format:       w4/r0 (latest is w4/r0)
+[    3.410215] UBIFS: default compressor: lzo
+[    3.414308] UBIFS: reserved for root:  347848 bytes (339 KiB)
+
+Bootkernel Meraki Build is 25-201809040933-G8fbce340-aacharya-ring
+Board is MR53
+Booting part.safe
+
+[    6.244329] Starting new kernel
+[    6.246422] Bye!
+
+
+U-Boot 2012.07-gd040ed5-dirty [local,local] (Mar 29 2016 - 08:05:21)
+
+DRAM:  235 MiB
+cdp: machid 4971
+NAND:  128 MiB
+Using default environment
+
+In:    serial
+Out:   serial
+Err:   serial
+late_init: machid 4971
+Net:   No ethernet found.
+
+NAND read: device 0 offset 0x2c40000, size 0xa80000
+ 11010048 bytes read: OK
+bootm 0x42000000#config@3## Booting kernel from FIT Image at 42000000 ...
+   Using 'config@3' configuration
+   Trying 'kernel@1' kernel subimage
+     Description:  Boot Kernel
+     Type:         Kernel Image
+     Compression:  uncompressed
+     Data Start:   0x420000f8
+     Data Size:    1557336 Bytes = 1.5 MiB
+     Architecture: ARM
+     OS:           Linux
+     Load Address: 0x41508000
+     Entry Point:  0x41508000
+     Hash algo:    sha1
+     Hash value:   f75f60336909a51c1a5c81b9e94a535c4c7373bb
+   Verifying Hash Integrity ... sha1+ OK
+## Loading init Ramdisk from FIT Image at 42000000 ...
+   Using 'config@3' configuration
+   Trying 'ramdisk@1' ramdisk subimage
+     Description:  Cryptid Ramdisk
+     Type:         RAMDisk Image
+     Compression:  lzma compressed
+     Data Start:   0x4217c53c
+     Data Size:    405740 Bytes = 396.2 KiB
+     Architecture: ARM
+     Hash algo:    sha1
+     Hash value:   9ef6f9d54402eef6582ca573a693c77f72ff3c05
+   Verifying Hash Integrity ... sha1+ OK
+## Flattened Device Tree from FIT Image at 42000000
+   Using 'config@3' configuration
+   Trying 'fdt@3' FDT blob subimage
+     Description:  MR53 Device Tree
+     Type:         Flat Device Tree
+     Compression:  uncompressed
+     Data Start:   0x421e2750
+     Data Size:    7248 Bytes = 7.1 KiB
+     Architecture: ARM
+     Hash algo:    sha1
+     Hash value:   fc1af865589d0870447f3a40d1e37955f7638647
+   Verifying Hash Integrity ... sha1+ OK
+   Loading FDT from 0x421e2750 to 0x41501000
+   Booting using the fdt blob at 0x41501000
+   Loading Kernel Image ... OK
+OK
+   Loading Ramdisk to 4ea9c000, end 4eaff0ec ... OK
+   Loading Device Tree to 4ea97000, end 4ea9bc4f ... OK
+Using machid 0x136b from environment
+
+Starting kernel ...
+
+[    0.000000] Booting Linux on physical CPU 0
+[    0.000000] Linux version 3.4.113 (aacharya@sf100.meraki.com) (gcc version 4.8.3 (GCC) ) #4 SMP Tue Sep 4 11:24:13 PDT 2018
+[    0.000000] CPU: ARMv7 Processor [512f04d0] revision 0 (ARMv7), cr=10c5387d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, PIPT instruction cache
+[    0.000000] Machine: Qualcomm Atheros AP160 reference board, model: Meraki MR53 (Sasquatch)
+[    0.000000] msm_reserve_memory: 0x44600000, 0x200000
+[    0.000000] memory pool 3 (start 5fe00000 size 100000) initialized
+[    0.000000] Memory policy: ECC disabled, Data cache writealloc
+[    0.000000] smem_find(137, 80): wrong size 72
+[    0.000000] socinfo_init: v6, id=204, ver=2.0, raw_id=2313, raw_ver=2313, hw_plat=0,  hw_plat_ver=65536
+[    0.000000]  accessory_chip=0 hw_plat_subtype=0
+[    0.000000] PERCPU: Embedded 8 pages/cpu @c0b16000 s10240 r8192 d14336 u32768
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 123692
+[    0.000000] Kernel command line: ubi.mtd=ubi ubi.mtd=art root=/dev/ram rw console=ttyHSL1,115200n8 maxcpus=0 qcom-wdt.clear_reason=0 loader=u-boot part=bootkernel2
+[    0.000000] PID hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.000000] Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+[    0.000000] Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+[    0.000000] Memory: 49MB 438MB = 487MB total
+[    0.000000] Memory: 486420k/489492k available, 12268k reserved, 0K highmem
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+[    0.000000]     vmalloc : 0xdf000000 - 0xff000000   ( 512 MB)
+[    0.000000]     lowmem  : 0xc0000000 - 0xdea00000   ( 490 MB)
+[    0.000000]     pkmap   : 0xbfe00000 - 0xc0000000   (   2 MB)
+[    0.000000]     modules : 0xbf000000 - 0xbfe00000   (  14 MB)
+[    0.000000]       .text : 0xc0008000 - 0xc04d3000   (4908 kB)
+[    0.000000]       .init : 0xc0500000 - 0xc0602800   (1034 kB)
+[    0.000000]       .data : 0xc0604000 - 0xc06710e0   ( 437 kB)
+[    0.000000]        .bss : 0xc0671104 - 0xc070f84c   ( 634 kB)
+[    0.000000] SLUB: Genslabs=11, HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+[    0.000000] Hierarchical RCU implementation.
+[    0.000000] NR_IRQS:921
+[    0.000000] sched_clock: 32 bits at 32kHz, resolution 31240ns, wraps every 134175798ms
+[    0.000000] Console: colour dummy device 80x30
+[    0.150421] Calibrating delay using timer specific routine.. 12.55 BogoMIPS (lpj=62791)
+[    0.150452] pid_max: default: 32768 minimum: 301
+[    0.150765] Mount-cache hash table entries: 512
+[    0.154076] CPU: Testing write buffer coherency: ok
+[    0.154233] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+[    0.154233] hw perfevents: enabled with ARMv7 Krait PMU driver, 5 counters available
+[    0.154326] Setting up static identity map for 0x418089f8 - 0x41808a80
+[    0.154920] Brought up 1 CPUs
+[    0.154951] SMP: Total of 1 processors activated (12.55 BogoMIPS).
+[    0.155857] devtmpfs: initialized
+[    0.169728] dummy: 
+[    0.170196] NET: Registered protocol family 16
+[    0.170915] AXI: msm_bus_fabric_init_driver(): msm_bus_fabric_init_driver
+[    0.173039] meminfo_init: smem ram ptable found: ver: 0 len: 5
+[    0.173039] Found 1 memory banks grouped into 8 memory regions
+[    0.173289] smem_find(137, 80): wrong size 72
+[    0.173320] socinfo_init: v6, id=204, ver=2.0, raw_id=2313, raw_ver=2313, hw_plat=0,  hw_plat_ver=65536
+[    0.173320]  accessory_chip=0 hw_plat_subtype=0
+[    0.173383] msm_rpm_init: RPM firmware 3.0.16777342
+[    0.179850] clk_tbl_nss - loaded
+[    0.208497] gpiochip_add: registered GPIOs 0 to 151 on device: msmgpio
+[    0.210028] No ATAGs?
+[    0.210059] hw-breakpoint: found 5 (+1 reserved) breakpoint and 4 watchpoint registers.
+[    0.210059] hw-breakpoint: maximum watchpoint size is 8 bytes.
+[    0.210402] msm_dmov_memcpy_init: Success
+[    0.216776] sps:BAM 0x12244000 enabled: ver:0x5, number of pipes:20
+[    0.216776] sps:BAM 0x12244000 is registered.
+[    0.217025] sps:sps is ready.
+[    0.233770] bio: create slab <bio-0> at 0
+[    0.237332] i2c-gpio 1.i2c: using pins 8 (SDA) and 9 (SCL)
+[    0.237613] i2c-gpio 2.i2c: using pins 12 (SDA) and 13 (SCL)
+[    0.239050] Switching to clocksource gp_timer
+[    0.260887] NET: Registered protocol family 2
+[    0.268947] IP route cache hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.269603] TCP established hash table entries: 16384 (order: 5, 131072 bytes)
+[    0.269790] TCP bind hash table entries: 16384 (order: 5, 131072 bytes)
+[    0.269978] TCP: Hash tables configured (established 16384 bind 16384)
+[    0.269978] TCP: reno registered
+[    0.270009] UDP hash table entries: 256 (order: 1, 8192 bytes)
+[    0.270040] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
+[    0.270477] NET: Registered protocol family 1
+[    0.270727] Unpacking initramfs...
+[    0.509965] Freeing initrd memory: 396K
+[    0.517869] Detected 5 counters on the L2CC PMU.
+[    0.525866] smd: register irq failed on wcnss_a11
+[    0.525866] smd: deregistering IRQs
+[    0.525929] SMD: smd_core_platform_init() failed
+[    0.528053] smem_find(427, 88): wrong size 24
+[    0.528053] smem_find(427, 96): wrong size 24
+[    0.528084] get_bootconfig_partition: no dual boot v2 info in shared memory
+[    0.691221] acpuclk-ipq806x acpuclk-ipq806x: SPEED BIN: 0
+[    0.691221] acpuclk-ipq806x acpuclk-ipq806x: ACPU PVS: 1
+[    0.695095] acpuclk-ipq806x acpuclk-ipq806x: CPU0: 6 frequencies supported
+[    0.695126] acpuclk-ipq806x acpuclk-ipq806x: CPU1: 6 frequencies supported
+[    0.706404] msm_rpm_log_probe: OK
+[    0.899437] msgmni has been set to 950
+[    0.908591] NET: Registered protocol family 38
+[    0.908622] io scheduler noop registered
+[    0.908653] io scheduler deadline registered (default)
+[    0.909372] Serial: 8250/16550 driver, 2 ports, IRQ sharing disabled
+[    0.925304] msm_serial_hs module loaded
+[    0.925492] msm_serial_hsl: detected port #1
+[    0.925648] msm_serial_hsl.1: ttyHSL1 at MMIO 0x16340000 (irq = 184) is a MSM
+[    0.926054] msm_serial_hsl: console setup on port #1
+[    1.474008] console [ttyHSL1] enabled
+[    1.482661] msm_serial_hsl: detected port #0
+[    1.486004] msm_serial_hsl.0: ttyHSL0 at MMIO 0x12450000 (irq = 225) is a MSM
+[    1.498219] msm_serial_hsl: driver initialized
+[    1.501843] at24 1-0052: 8192 byte 24c64 EEPROM, writable, 32 bytes/write
+[    1.525616] msm_nand_probe: phys addr 0x1ac00000 
+[    1.529365] msm_nand_probe: dmac 0x3
+[    1.532833] msm_nand_probe: allocated dma buffer at ffdfe000, dma_addr 5ed8c000
+[    1.544267] status: 20
+[    1.545579] nandid: 1580a101 maker 01 device a1
+[    1.550171] ONFI probe : Found an ONFI compliant device S34MS01G2           
+[    1.558825] Found a supported NAND device
+[    1.561886] NAND Controller ID : 0x4030
+[    1.565604] NAND Device ID  : 0x1580a101
+[    1.569540] Buswidth : 8 Bits
+[    1.572477] Density  : 128 MByte
+[    1.575663] Pagesize : 2048 Bytes
+[    1.578975] Erasesize: 131072 Bytes
+[    1.582474] Oobsize  : 64 Bytes
+[    1.585567] CFG0 Init  : 0xa8d408c0
+[    1.589065] CFG1 Init  : 0x0004745c
+[    1.592502] ECCBUFCFG  : 0x00000203
+[    1.596126] 14 ofpart partitions found on MTD device msm_nand
+[    1.601780] Creating 14 MTD partitions on "msm_nand":
+[    1.606779] 0x000000040000-0x000000180000 : "mibib"
+[    1.622524] 0x000000000000-0x000000040000 : "sbl1"
+[    1.640987] 0x000000180000-0x0000002c0000 : "sbl2"
+[    1.659700] 0x0000002c0000-0x000000540000 : "sbl3"
+[    1.679318] 0x000000540000-0x000000660000 : "ddrconfig"
+[    1.698500] 0x000000660000-0x000000780000 : "ssd"
+[    1.717213] 0x000000780000-0x000000a00000 : "tz"
+[    1.736644] 0x000000a00000-0x000000c80000 : "rpm"
+[    1.756232] 0x000001fc0000-0x000002140000 : "u-boot"
+[    1.775413] 0x0000021c0000-0x000002c40000 : "bootkernel1"
+[    1.804092] 0x000002c40000-0x0000036c0000 : "bootkernel2"
+[    1.832646] 0x0000036c0000-0x000007d80000 : "ubi"
+[    1.924398] 0x000007d80000-0x000007f80000 : "art"
+[    1.943548] 0x000000000000-0x000008000000 : "all"
+[    2.108591] UBI: attaching mtd11 to ubi0
+[    2.111558] UBI: physical eraseblock size:   131072 bytes (128 KiB)
+[    2.117744] UBI: logical eraseblock size:    126976 bytes
+[    2.123180] UBI: smallest flash I/O unit:    2048
+[    2.127803] UBI: VID header offset:          2048 (aligned 2048)
+[    2.133864] UBI: data offset:                4096
+[    2.570415] UBI: max. sequence number:       848
+[    2.597563] UBI: attached mtd11 to ubi0
+[    2.600437] UBI: MTD device name:            "ubi"
+[    2.605123] UBI: MTD device size:            70 MiB
+[    2.610028] UBI: number of good PEBs:        566
+[    2.614589] UBI: number of bad PEBs:         0
+[    2.619025] UBI: number of corrupted PEBs:   0
+[    2.623492] UBI: max. allowed volumes:       128
+[    2.628053] UBI: wear-leveling threshold:    4096
+[    2.632771] UBI: number of internal volumes: 1
+[    2.637175] UBI: number of user volumes:     4
+[    2.641643] UBI: available PEBs:             137
+[    2.646204] UBI: total number of reserved PEBs: 429
+[    2.651077] UBI: number of PEBs reserved for bad PEB handling: 5
+[    2.657044] UBI: max/mean erase counter: 6/1
+[    2.661324] UBI: image sequence number:  762311168
+[    2.666135] UBI: background thread "ubi_bgt0d" started, PID 790
+[    2.673758] UBI: attaching mtd12 to ubi1
+[    2.676663] UBI: physical eraseblock size:   131072 bytes (128 KiB)
+[    2.682942] UBI: logical eraseblock size:    126976 bytes
+[    2.688284] UBI: smallest flash I/O unit:    2048
+[    2.693002] UBI: VID header offset:          2048 (aligned 2048)
+[    2.698969] UBI: data offset:                4096
+[    2.716213] UBI: max. sequence number:       3
+[    2.732239] UBI: attached mtd12 to ubi1
+[    2.735020] UBI: MTD device name:            "art"
+[    2.739862] UBI: MTD device size:            2 MiB
+[    2.744579] UBI: number of good PEBs:        16
+[    2.749140] UBI: number of bad PEBs:         0
+[    2.753514] UBI: number of corrupted PEBs:   0
+[    2.757950] UBI: max. allowed volumes:       128
+[    2.762574] UBI: wear-leveling threshold:    4096
+[    2.767228] UBI: number of internal volumes: 1
+[    2.771696] UBI: number of user volumes:     1
+[    2.776101] UBI: available PEBs:             0
+[    2.780568] UBI: total number of reserved PEBs: 16
+[    2.785285] UBI: number of PEBs reserved for bad PEB handling: 2
+[    2.791315] UBI: max/mean erase counter: 2/1
+[    2.795532] UBI: image sequence number:  1525592129
+[    2.800562] UBI: background thread "ubi_bgt1d" started, PID 795
+[    2.875413] bonding: Ethernet Channel Bonding Driver: v3.7.1 (April 27, 2011)
+[    2.993220] i2c /dev entries driver
+[    3.006029] restart_reason wdt:1 r:35573259
+[    3.016307] cpuidle: using governor ladder
+[    3.019431] cpuidle: using governor menu
+[    3.048516] meraki-config board-data.9: Meraki config device loaded
+[    3.058794] TCP: bic registered
+[    3.060949] TCP: cubic registered
+[    3.064198] TCP: westwood registered
+[    3.067760] TCP: htcp registered
+[    3.071009] NET: Registered protocol family 17
+[    3.075413] 8021q: 802.1Q VLAN Support v1.8
+[    3.079693] VFP support v0.3: implementor 51 architecture 64 part 4d variant 2 rev 0
+[    3.087316] Registering SWP/SWPB emulation handler
+[    3.092096] clock_late_init: Removing enables held for handed-off clocks
+[    3.109278] ipq_nss_get_mac_addr: MAC[0]: ff:ff:ff:ff:ff:ff
+[    3.115120] ipq_nss_get_mac_addr: MAC[1]: ff:ff:ff:ff:ff:ff
+[    3.120524] ipq_nss_get_mac_addr: MAC[2]: ff:ff:ff:ff:ff:ff
+[    3.125460] ipq_nss_get_mac_addr: MAC[3]: ff:ff:ff:ff:ff:ff
+[    3.130959] no pmic restart interrupt specified
+[    3.141455] devtmpfsþ[    3.144048] Freeing init memory: 1032K
+mount: mounting none on /dev failed: Device or resource busy
+[    3.297532] UBIFS: recovery needed
+[    3.380193] UBIFS: recovery completed
+[    3.382817] UBIFS: mounted UBI device 0, volume 3, name "storage"
+[    3.388878] UBIFS: file system size:   7364608 bytes (7192 KiB, 7 MiB, 58 LEBs)
+[    3.396188] UBIFS: journal size:       1015809 bytes (992 KiB, 0 MiB, 6 LEBs)
+[    3.403311] UBIFS: media format:       w4/r0 (latest is w4/r0)
+[    3.409122] UBIFS: default compressor: lzo
+[    3.413183] UBIFS: reserved for root:  347848 bytes (339 KiB)
+
+Bootkernel Meraki Build is 25-201809040933-G8fbce340-aacharya-ring
+Board is MR53
+Booting part.safe
+
+[    6.237300] Starting new kernel
+[    6.239456] Bye!
+[    0.000000] Booting Linux on physical CPU 0
+[    0.000000] Linux version 3.4.113 (jenkins@dal247.meraki.com) (gcc version 4.8.3 (GCC) ) #3 SMP Fri Sep 28 17:12:36 PDT 2018
+[    0.000000] CPU: ARMv7 Processor [512f04d0] revision 0 (ARMv7), cr=10c5387d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, PIPT instruction cache
+[    0.000000] Machine: Qualcomm Atheros AP160 reference board, model: Meraki MR53 (Sasquatch)
+[    0.000000] msm_reserve_memory: 0x44600000, 0x200000
+[    0.000000] memory pool 3 (start 5fe00000 size 100000) initialized
+[    0.000000] Memory policy: ECC disabled, Data cache writealloc
+[    0.000000] smem_find(137, 80): wrong size 72
+[    0.000000] socinfo_init: v6, id=204, ver=2.0, raw_id=2313, raw_ver=2313, hw_plat=0,  hw_plat_ver=65536
+[    0.000000]  accessory_chip=0 hw_plat_subtype=0
+[    0.000000] PERCPU: Embedded 8 pages/cpu @c0c40000 s10240 r8192 d14336 u32768
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 123692
+[    0.000000] Kernel command line: ubi.mtd=ubi ubi.mtd=art root=/dev/ram rw console=ttyHSL1,115200n8
+[    0.000000] PID hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.000000] Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+[    0.000000] Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+[    0.000000] Memory: 49MB 438MB = 487MB total
+[    0.000000] Memory: 477272k/480344k available, 21416k reserved, 0K highmem
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+[    0.000000]     vmalloc : 0xdf000000 - 0xff000000   ( 512 MB)
+[    0.000000]     lowmem  : 0xc0000000 - 0xdea00000   ( 490 MB)
+[    0.000000]     pkmap   : 0xbfe00000 - 0xc0000000   (   2 MB)
+[    0.000000]     modules : 0xbf000000 - 0xbfe00000   (  14 MB)
+[    0.000000]       .text : 0xc0008000 - 0xc0505648   (5110 kB)
+[    0.000000]       .init : 0xc0600000 - 0xc0702800   (1034 kB)
+[    0.000000]       .data : 0xc0704000 - 0xc0797540   ( 590 kB)
+[    0.000000]        .bss : 0xc0797564 - 0xc08366f0   ( 637 kB)
+[    0.000000] SLUB: Genslabs=11, HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+[    0.000000] Hierarchical RCU implementation.
+[    0.000000] NR_IRQS:1689
+[    0.000000] sched_clock: 32 bits at 32kHz, resolution 31240ns, wraps every 134175798ms
+[    0.000000] Console: colour dummy device 80x30
+[    0.150452] Calibrating delay using timer specific routine.. 12.54 BogoMIPS (lpj=62732)
+[    0.150452] pid_max: default: 32768 minimum: 301
+[    0.150734] Mount-cache hash table entries: 512
+[    0.151452] CPU: Testing write buffer coherency: ok
+[    0.151515] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+[    0.151546] hw perfevents: enabled with ARMv7 Krait PMU driver, 5 counters available
+[    0.151577] Setting up static identity map for 0x4182c3a0 - 0x4182c428
+[    0.153202] CPU1: Booted secondary processor
+[    0.153264] CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+[    0.153358] Brought up 2 CPUs
+[    0.153358] SMP: Total of 2 processors activated (25.09 BogoMIPS).
+[    0.154420] devtmpfs: initialized
+[    0.160762] dummy: 
+[    0.161012] NET: Registered protocol family 16
+[    0.161387] AXI: msm_bus_fabric_init_driver(): msm_bus_fabric_init_driver
+[    0.162730] meminfo_init: smem ram ptable found: ver: 0 len: 5
+[    0.162761] Found 1 memory banks grouped into 8 memory regions
+[    0.162886] smem_find(137, 80): wrong size 72
+[    0.162886] socinfo_init: v6, id=204, ver=2.0, raw_id=2313, raw_ver=2313, hw_plat=0,  hw_plat_ver=65536
+[    0.162886]  accessory_chip=0 hw_plat_subtype=0
+[    0.162917] msm_rpm_init: RPM firmware 3.0.16777342
+[    0.166354] clk_tbl_nss - loaded
+[    0.186879] gpiochip_add: registered GPIOs 0 to 151 on device: msmgpio
+[    0.187816] No ATAGs?
+[    0.187847] hw-breakpoint: found 5 (+1 reserved) breakpoint and 4 watchpoint registers.
+[    0.187847] hw-breakpoint: maximum watchpoint size is 8 bytes.
+[    0.188159] msm_dmov_memcpy_init: Success
+[    0.194657] sps:BAM 0x12244000 enabled: ver:0x5, number of pipes:20
+[    0.194689] sps:BAM 0x12244000 is registered.
+[    0.194939] sps:sps is ready.
+[    0.213589] msm_pcie_setup: link initialized
+[    0.213933] PCI host bridge to bus 0000:00
+[    0.213964] pci_bus 0000:00: root bus resource [mem 0x08000000-0x0fefffff]
+[    0.214495] PCI: bus0: Fast back to back transfers disabled
+[    0.214495] pci 0000:00:00.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[    0.215338] PCI: bus1: Fast back to back transfers disabled
+[    0.273758] msm_pcie_setup: link initialized
+[    0.274070] PCI host bridge to bus 0000:02
+[    0.274101] pci_bus 0000:02: root bus resource [mem 0x2e000000-0x31efffff]
+[    0.274570] PCI: bus2: Fast back to back transfers disabled
+[    0.274601] pci 0000:02:00.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[    0.275320] PCI: bus3: Fast back to back transfers disabled
+[    0.333926] msm_pcie_setup: link initialized
+[    0.334239] PCI host bridge to bus 0000:04
+[    0.334270] pci_bus 0000:04: root bus resource [mem 0x32000000-0x35efffff]
+[    0.334770] PCI: bus4: Fast back to back transfers disabled
+[    0.334770] pci 0000:04:00.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[    0.335582] PCI: bus5: Fast back to back transfers disabled
+[    0.336613] pci 0000:04:00.0: BAR 8: assigned [mem 0x32000000-0x321fffff]
+[    0.336644] pci 0000:05:00.0: BAR 0: assigned [mem 0x32000000-0x321fffff 64bit]
+[    0.336676] pci 0000:04:00.0: PCI bridge to [bus 05-05]
+[    0.336707] pci 0000:04:00.0:   bridge window [mem 0x32000000-0x321fffff]
+[    0.336769] PCI: enabling device 0000:04:00.0 (0140 -> 0143)
+[    0.336832] pci 0000:02:00.0: BAR 8: assigned [mem 0x2e000000-0x2e1fffff]
+[    0.336863] pci 0000:03:00.0: BAR 0: assigned [mem 0x2e000000-0x2e1fffff 64bit]
+[    0.336894] pci 0000:02:00.0: PCI bridge to [bus 03-03]
+[    0.336925] pci 0000:02:00.0:   bridge window [mem 0x2e000000-0x2e1fffff]
+[    0.336957] PCI: enabling device 0000:02:00.0 (0140 -> 0143)
+[    0.337019] pci 0000:00:00.0: BAR 8: assigned [mem 0x08000000-0x081fffff]
+[    0.337050] pci 0000:00:00.0: BAR 9: assigned [mem 0x08200000-0x082fffff pref]
+[    0.337082] pci 0000:01:00.0: BAR 0: assigned [mem 0x08000000-0x081fffff 64bit]
+[    0.337113] pci 0000:01:00.0: BAR 6: assigned [mem 0x08200000-0x0820ffff pref]
+[    0.337144] pci 0000:00:00.0: PCI bridge to [bus 01-01]
+[    0.337175] pci 0000:00:00.0:   bridge window [mem 0x08000000-0x081fffff]
+[    0.337175] pci 0000:00:00.0:   bridge window [mem 0x08200000-0x082fffff pref]
+[    0.337238] PCI: enabling device 0000:00:00.0 (0140 -> 0143)
+[    0.351671] bio: create slab <bio-0> at 0
+[    0.354358] i2c-gpio 1.i2c: using pins 8 (SDA) and 9 (SCL)
+[    0.354639] i2c-gpio 2.i2c: using pins 12 (SDA) and 13 (SCL)
+[    0.356107] Bluetooth: Core ver 2.16
+[    0.356294] NET: Registered protocol family 31
+[    0.356294] Bluetooth: HCI device and connection manager initialized
+[    0.356326] Bluetooth: HCI socket layer initialized
+[    0.356357] Bluetooth: L2CAP socket layer initialized
+[    0.356388] Bluetooth: SCO socket layer initialized
+[    0.356482] Switching to clocksource gp_timer
+[    0.370290] NET: Registered protocol family 2
+[    0.374789] IP route cache hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.375039] TCP established hash table entries: 16384 (order: 5, 131072 bytes)
+[    0.375132] TCP bind hash table entries: 16384 (order: 5, 131072 bytes)
+[    0.375257] TCP: Hash tables configured (established 16384 bind 16384)
+[    0.375257] TCP: reno registered
+[    0.375257] UDP hash table entries: 256 (order: 1, 8192 bytes)
+[    0.375288] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
+[    0.375507] NET: Registered protocol family 1
+[    0.375757] Unpacking initramfs...
+[    5.606497] [sched_delayed] sched: RT throttling activated
+[    5.654358] Freeing initrd memory: 8372K
+[    5.659950] Detected 5 counters on the L2CC PMU.
+[    5.663448] smd: register irq failed on wcnss_a11
+[    5.663448] smd: deregistering IRQs
+[    5.663480] SMD: smd_core_platform_init() failed
+[    5.666947] smem_find(427, 88): wrong size 24
+[    5.666947] smem_find(427, 96): wrong size 24
+[    5.666947] get_bootconfig_partition: no dual boot v2 info in shared memory
+[    5.784504] acpuclk-ipq806x acpuclk-ipq806x: SPEED BIN: 0
+[    5.784504] acpuclk-ipq806x acpuclk-ipq806x: ACPU PVS: 1
+[    5.790409] acpuclk-ipq806x acpuclk-ipq806x: CPU0: 6 frequencies supported
+[    5.790409] acpuclk-ipq806x acpuclk-ipq806x: CPU1: 6 frequencies supported
+[    5.795970] msm_rpm_log_probe: OK
+[    5.927241] msgmni has been set to 948
+[    5.934395] NET: Registered protocol family 38
+[    5.934426] io scheduler noop registered
+[    5.934426] io scheduler deadline registered (default)
+[    5.935020] Serial: 8250/16550 driver, 2 ports, IRQ sharing disabled
+[    5.945204] msm_serial_hs module loaded
+[    5.945298] msm_serial_hsl: detected port #1
+[    5.945392] msm_serial_hsl.1: ttyHSL1 at MMIO 0x16340000 (irq = 184) is a MSM
+[    5.945423] msm_serial_hsl: console setup on port #1
+[    6.752014] console [ttyHSL1] enabled
+[    6.756107] msm_serial_hsl: detected port #0
+[    6.760106] msm_serial_hsl.0: ttyHSL0 at MMIO 0x12450000 (irq = 225) is a MSM
+[    6.768009] msm_serial_hsl: driver initialized
+[    6.771540] Trying to register dev faulty etc
+[    6.777788] at24 1-0052: 8192 byte 24c64 EEPROM, writable, 32 bytes/write
+[    6.792502] msm_nand_probe: phys addr 0x1ac00000 
+[    6.796188] msm_nand_probe: dmac 0x3
+[    6.799781] msm_nand_probe: allocated dma buffer at ffdfe000, dma_addr 5f07a000
+[    6.807653] status: c00020
+[    6.809715] nandid: 1580a101 maker 01 device a1
+[    6.814245] ONFI probe : Found an ONFI compliant device S34MS01G2           
+[    6.821524] Found a supported NAND device
+[    6.825335] NAND Controller ID : 0x4030
+[    6.829428] NAND Device ID  : 0x1580a101
+[    6.833083] Buswidth : 8 Bits
+[    6.836019] Density  : 128 MByte
+[    6.839268] Pagesize : 2048 Bytes
+[    6.842517] Erasesize: 131072 Bytes
+[    6.846016] Oobsize  : 64 Bytes
+[    6.849172] CFG0 Init  : 0xa8d408c0
+[    6.852608] CFG1 Init  : 0x0004745c
+[    6.856076] ECCBUFCFG  : 0x00000203
+[    6.859700] 14 ofpart partitions found on MTD device msm_nand
+[    6.865292] Creating 14 MTD partitions on "msm_nand":
+[    6.870384] 0x000000040000-0x000000180000 : "mibib"
+[    6.883348] 0x000000000000-0x000000040000 : "sbl1"
+[    6.894001] 0x000000180000-0x0000002c0000 : "sbl2"
+[    6.904717] 0x0000002c0000-0x000000540000 : "sbl3"
+[    6.919556] 0x000000540000-0x000000660000 : "ddrconfig"
+[    6.932833] 0x000000660000-0x000000780000 : "ssd"
+[    6.946954] 0x000000780000-0x000000a00000 : "tz"
+[    6.960949] 0x000000a00000-0x000000c80000 : "rpm"
+[    6.973039] 0x000001fc0000-0x000002140000 : "u-boot"
+[    6.985785] 0x0000021c0000-0x000002c40000 : "bootkernel1"
+[    7.007372] 0x000002c40000-0x0000036c0000 : "bootkernel2"
+[    7.027710] 0x0000036c0000-0x000007d80000 : "ubi"
+[    7.098844] 0x000007d80000-0x000007f80000 : "art"
+[    7.112058] 0x000000000000-0x000008000000 : "all"
+[    7.243267] UBI: attaching mtd11 to ubi0
+[    7.246173] UBI: physical eraseblock size:   131072 bytes (128 KiB)
+[    7.252452] UBI: logical eraseblock size:    126976 bytes
+[    7.257825] UBI: smallest flash I/O unit:    2048
+[    7.262480] UBI: VID header offset:          2048 (aligned 2048)
+[    7.268478] UBI: data offset:                4096
+[    7.679600] UBI: max. sequence number:       851
+[    7.702124] UBI: attached mtd11 to ubi0
+[    7.704935] UBI: MTD device name:            "ubi"
+[    7.709746] UBI: MTD device size:            70 MiB
+[    7.714589] UBI: number of good PEBs:        566
+[    7.719212] UBI: number of bad PEBs:         0
+[    7.723617] UBI: number of corrupted PEBs:   0
+[    7.728053] UBI: max. allowed volumes:       128
+[    7.732646] UBI: wear-leveling threshold:    4096
+[    7.737332] UBI: number of internal volumes: 1
+[    7.741736] UBI: number of user volumes:     4
+[    7.746173] UBI: available PEBs:             137
+[    7.750796] UBI: total number of reserved PEBs: 429
+[    7.755638] UBI: number of PEBs reserved for bad PEB handling: 5
+[    7.761636] UBI: max/mean erase counter: 6/1
+[    7.765885] UBI: image sequence number:  762311168
+[    7.770696] UBI: background thread "ubi_bgt0d" started, PID 838
+[    7.770727] UBI: attaching mtd12 to ubi1
+[    7.770727] UBI: physical eraseblock size:   131072 bytes (128 KiB)
+[    7.770727] UBI: logical eraseblock size:    126976 bytes
+[    7.770759] UBI: smallest flash I/O unit:    2048
+[    7.770759] UBI: VID header offset:          2048 (aligned 2048)
+[    7.770759] UBI: data offset:                4096
+[    7.819243] UBI: max. sequence number:       3
+[    7.833552] UBI: attached mtd12 to ubi1
+[    7.836363] UBI: MTD device name:            "art"
+[    7.841174] UBI: MTD device size:            2 MiB
+[    7.845923] UBI: number of good PEBs:        16
+[    7.850452] UBI: number of bad PEBs:         0
+[    7.854857] UBI: number of corrupted PEBs:   0
+[    7.859293] UBI: max. allowed volumes:       128
+[    7.863886] UBI: wear-leveling threshold:    4096
+[    7.868572] UBI: number of internal volumes: 1
+[    7.872977] UBI: number of user volumes:     1
+[    7.877444] UBI: available PEBs:             0
+[    7.881849] UBI: total number of reserved PEBs: 16
+[    7.886629] UBI: number of PEBs reserved for bad PEB handling: 2
+[    7.892596] UBI: max/mean erase counter: 2/1
+[    7.896907] UBI: image sequence number:  1525592129
+[    7.901749] UBI: background thread "ubi_bgt1d" started, PID 842
+[    7.951890] bonding: Ethernet Channel Bonding Driver: v3.7.1 (April 27, 2011)
+[    8.033739] input: gpio-buttons.7 as /devices/gpio-buttons.7/input/input0
+[    8.043642] i2c /dev entries driver
+[    8.056107] ina2xx 1-0045: power monitor ina219 (Rshunt = 10000 uOhm)
+[    8.063573] restart_reason wdt:1 r:35573259
+[    8.068853] Bluetooth: HCI UART driver ver 2.2
+[    8.072227] Bluetooth: HCI H4 protocol initialized
+[    8.080693] cpuidle: using governor ladder
+[    8.083786] cpuidle: using governor menu
+[    8.105123] meraki-config board-data.9: Meraki config device loaded
+[    8.114401] TCP: bic registered
+[    8.116557] TCP: cubic registered
+[    8.119837] TCP: westwood registered
+[    8.123367] TCP: htcp registered
+[    8.126616] NET: Registered protocol family 17
+[    8.131115] VFP support v0.3: implementor 51 architecture 64 part 4d variant 2 rev 0
+[    8.138800] Registering SWP/SWPB emulation handler
+[    8.143517] clock_late_init: Removing enables held for handed-off clocks
+[    8.156263] ipq_nss_get_mac_addr: MAC[0]: ff:ff:ff:ff:ff:ff
+[    8.161137] ipq_nss_get_mac_addr: MAC[1]: ff:ff:ff:ff:ff:ff
+[    8.166635] ipq_nss_get_mac_addr: MAC[2]: ff:ff:ff:ff:ff:ff
+[    8.172196] ipq_nss_get_mac_addr: MAC[3]: ff:ff:ff:ff:ff:ff
+[    8.177694] no pmic restart interrupt specified
+[    8.187472] devtmpfsú[    8.190128] Freeing init memory: 1032K
+
+init started: BusyBox v1.24.1 (2018-09-28 16:54:38 PDT)
+[    8.486285] UBIFS: recovery needed
+[    8.590534] UBIFS: recovery completed
+[    8.593158] UBIFS: mounted UBI device 0, volume 3, name "storage"
+[    8.599281] UBIFS: file system size:   7364608 bytes (7192 KiB, 7 MiB, 58 LEBs)
+[    8.606529] UBIFS: journal size:       1015809 bytes (992 KiB, 0 MiB, 6 LEBs)
+[    8.613651] UBIFS: media format:       w4/r0 (latest is w4/r0)
+[    8.619462] UBIFS: default compressor: lzo
+[    8.623523] UBIFS: reserved for root:  347848 bytes (339 KiB)
+WARNING! THIS CONSOLE IS LOGGED! UNAUTHORIZED ACCESS FORBIDDEN!
+[    8.690378] Sat Jan  1 00:00:00 UTC 2000
+<Meraki> [    8.818681] Quick boot reason lookup: 
+[    8.836051] No valid safe config available or fallback disabled, remove unsafe config
+[    8.859575] sysctl: error: 'vm.extfrag_threshold' is an unknown key
+[    8.981724] 377+0 records in
+[    8.983567] 377+0 records out
+[    8.986629] 12064 bytes (11.8KB) copied, 0.103885 seconds, 113.4KB/s
+[    9.099843] 377+0 records in
+[    9.101686] 377+0 records out
+[    9.104748] 12064 bytes (11.8KB) copied, 0.103972 seconds, 113.3KB/s
+[    9.217838] 377+0 records in
+[    9.219650] 377+0 records out
+[    9.222680] 12064 bytes (11.8KB) copied, 0.103939 seconds, 113.3KB/s
+[   11.272446] GPIO Bitbanged MDIO: probed
+[   11.385567] GPIO Bitbanged MDIO: probed
+[   11.411121] AQ PHY Device registered
+[   11.428772] **********************************************************
+[   11.434270] * Driver    :NSS GMAC Driver for RTL v(3.72a)
+[   11.439675] * Version   :1.0
+[   11.442517] * Copyright :Copyright (c) 2013-2015 The Linux Foundation. All rights reserved.
+[   11.450952] **********************************************************
+[   11.457950] GMAC0(de3164c0) Invalid MAC@ - using 6e:6f:70:71:72:73
+[   11.470571] GMAC1(de315cc0) Invalid MAC@ - using ae:af:b0:b1:b2:b3
+[   11.481443] GMAC2(de3154c0) Invalid MAC@ - using 6e:6f:70:71:72:73
+[   11.495345] GMAC3(de5becc0) Invalid MAC@ - using 56:57:58:59:5a:5b
+[   11.543017] nss_driver - fw of size 378944  bytes copied to load addr: 40000000, nss_id : 0
+[   11.571321] nss_driver - Turbo Support 1
+[   11.574289] Supported Frequencies - 110Mhz 550Mhz 733Mhz 
+[   11.606091] nss_driver - fw of size 190016  bytes copied to load addr: 40800000, nss_id : 1
+[   11.633770] Error - Duplicate Interface CB Registered for interface 107
+[   11.639362] Error - Duplicate Interface CB Registered for interface 110
+[   11.706622] qca_85xx_sw: 8511 switch initialized
+[   11.729834] bonding: wired0 is being created...
+[   11.830240] bonding: wired0: setting mode to balance-xor (2).
+[   11.835051] bonding: wired0: setting xmit hash policy to layer2+3 (2).
+[   11.843080] bonding: wired0: Adding slave eth1.
+[   11.847422] bonding: wired0: enslaving eth1 as an active interface with an up link.
+[   11.854295] bonding: wired0: Adding slave eth2.
+[   11.859044] eth2: 1000 Mbps Full Duplex
+[   12.886597] bonding: wired0: enslaving eth2 as an active interface with an up link.
+[   12.893345] bonding: wired0: Adding slave eth3.
+[   12.898000] eth3: 1000 Mbps Full Duplex
+[   13.468259] eth1: 1000 Mbps Full Duplex
+[   13.926554] bonding: wired0: enslaving eth3 as an active interface with an up link.
+[   14.410434] Bluetooth: ti254x: firmware is up to date.
+[   14.420618] sysctl -w vm.panic_on_oom=2
+[   14.426741] vm.panic_on_oom = 2
+[   14.486035] click: starting router thread pid 1815 (de5b7300)
+[   14.529365] elts_meraki: module license 'unspecified' taints kernel.
+[   14.624586] Single synchronous check for reset
+[   14.949297] nss_macsec init success
+[   14.967603] 
+[   14.972664] boot 16 build 25-201809281433-G5614545c-rel-lawn board cryptid mac E0:CB:BC:51:97:C6
+[   14.984067] Module: mdio_bitbang  .text=0xbf000000 .data= .bss=
+[   14.984067] Module: mdio_gpio  .text=0xbf004000 .data=0xbf004424 .bss=
+[   14.984067] Module: aq_phy  .text=0xbf008000 .data=0xbf008f40 .bss=
+[   14.984098] Module: qca_nss_gmac  .text=0xbf00d000 .data=0xbf0137c4 .bss=0xbf013b18
+[   14.984098] Module: qca_nss_drv  .text=0xbf01c000 .data=0xbf0328f8 .bss=0xbf033698
+[   14.984098] Module: qca_85xx_sw  .text=0xbf04f000 .data=0xbf051924 .bss=0xbf051ba4
+[   14.984098] Module: proclikefs  .text=0xbf057000 .data= .bss=0xbf057b00
+[   14.984098] Module: merakiclick  .text=0xbf05c000 .data=0xbf156834 .bss=0xbf156ac0
+[   14.984098] Module: elts_meraki  .text=0xbf25c000 .data=0xbf4e8dd0 .bss=0xbf4ea448
+[   14.984098] Module: qca_nss_macsec  .text=0xbf69c000 .data=0xbf6a925c .bss=0xbf6a9628
+[   15.081661] phram: phram-oops device: 0x40000 at 0x5ffc0000
+[   15.297000] ti254x: SUCCESS hciconfig hci0 up
+[   16.321087] adf: module license 'Proprietary' taints kernel.
+[   16.328397] asf: module license 'Proprietary' taints kernel.
+[   16.335332] ath_spectral: module license 'Proprietary' taints kernel.
+[   16.341487] ath_spectral: Version 2.0.0
+[   16.341487] Copyright (c) 2005-2009 Atheros Communications, Inc. All Rights Reserved
+[   16.355232] ath_hal: module license 'Proprietary' taints kernel.
+[   16.361793] ath_hal: 0.9.17.1 (AR9380, WRITE_EEPROM, TX_DATA_SWAP, RX_DATA_SWAP, 11D)
+[   16.370727] ath_dfs: module license 'Proprietary' taints kernel.
+[   16.376694] ath_dfs: Version 2.0.0
+[   16.376694] Copyright (c) 2005-2006 Atheros Communications, Inc. All Rights Reserved
+[   16.407716] ath_ol_pci:  (Atheros/multi-bss)
+[   16.410996] ol_ath_pci_probe: PCI device id 0050 :0050
+[   16.416088] PCI: enabling device 0000:01:00.0 (0140 -> 0142)
+[   16.421961]  *********** Peregrine **************
+[   16.426460] __ol_ath_attach: Creating netdev wifi2
+[   16.431271] 
+[   16.431271] __ol_ath_attach() Allocated scn dce404c0
+[   16.437613] ath_ol_pci 0000:01:00.0: ath DEBUG: sc=0xdde72800
+[   16.443330] 
+[   16.443330]  ol_ath_pci_configure : num_desired MSI set to 0
+[   16.450484] 
+[   16.450484]  Using PCI Legacy Interrupt
+[   17.456201] 
+[   17.456201]  CLOCK PLL skipped 
+[   17.461918] __ol_ath_attach: dev name wifi2
+[   17.465104] ol_ath_attach interface_id 2
+[   17.469040] ol_target_init() BMI inited.
+[   17.473008] ol_target_init() BMI Get Target Info.
+[   17.477569] Chip id: 0x7, chip version: 0x4100016d
+[   17.482318] 
+[   17.482318]  CE WAR Disabled
+[   17.486785] NUM_DEV=1 FWMODE=0x2 FWSUBMODE=0x0 FWBR_BUF 0
+[   17.492221] ol_target_init() configure Target .
+[   17.496719] ol_transfer_bin_file: flash data file defined
+[   17.501999] ol_transfer_bin_file[3752] Get Caldata for wifi2.
+[   17.507872] __adf_os_fs_read[42], Open File /tmp/wifi2.caldata SUCCESS!!
+[   17.514370] file system magic:16914836 
+[   17.518275] super blocksize:4096 
+[   17.521524] inode 1887 
+[   17.523930] file size:12064 
+[   17.526835] __adf_os_fs_read[55]: caldata data size mismatch, fsize=12064, cal_size=2116
+[   17.534926] ol_transfer_bin_file 3813: Download Flash data len 2116
+[   17.541268] Board extended Data download address: 0x0
+[   17.550015] ol_download_cal_data: Board data file: 4 successfully downloaded, download address: 00401cc0
+[   17.558731] 
+[   17.558731]  Mission mode: Firmware CHIP Version 0
+[   17.564761] ol_transfer_bin_file: Downloading firmware file: AR9887/athwlan.bin
+[   17.572258] eth2: 1000 Mbps Full Duplex
+[   17.575820] macsec_ncb  mac_id:0x2 speed:0x3e8
+[   17.580068] ol_transfer_bin_file 3623: downloading file 1, Download data len 230420
+[   18.497875] eth1: 1000 Mbps Full Duplex
+[   18.500718] macsec_ncb  mac_id:0x1 speed:0x3e8
+[   18.568353] ol_target_init() Download FW done. 
+[   18.571883] ol_ath_attach() WMI attached. wmi_handle d97c0000 
+[   18.577756] htc_wmi_init() HT Create . dcd82800
+[   18.582224] htc_wmi_init() HIF Claim.
+[   18.585910] htc_wmi_init 7732 host_enable 1 nss_nwifi_offload 0
+[   18.591752] ol_ath_set_default_tgt_config : AC Minfree buffer allocation through module param (umac.ko)
+[   18.601124]  OL_ACBKMinfree : 0
+[   18.604217]  OL_ACBEMinfree : 0
+[   18.607372]  OL_ACVIMinfree : 0
+[   18.610465]  OL_ACVOMinfree : 0
+[   18.615182] CE_recv_buf_enqueue 877 Populate last entry 512 for CE 5
+[   18.620524] CE_recv_buf_enqueue 886 CE 5 wi 511 dest_ptr 0x5af02440 nbytes 0 recv_ctxt 0xd98f20c0
+[   18.629459] Startup Mode-0 set
+[   18.630427] eth3: 1000 Mbps Full Duplex
+[   18.630427] macsec_ncb  mac_id:0x3 speed:0x3e8
+[   18.640674] 
+[   18.640674] <=== cfg max peer id 1056 ====>
+[   18.646454] HTC Service:0x0300 ep:1 TX flow control disabled
+[   18.652077] htt_peer_map_timer_init Enter pdev d9a04000 hrtimer d9a06520
+[   18.658637] 
+[   18.658637]  htt_alloc_peer_map_mem : Alloc Success : host q vaddr d8418000 paddr 59918000
+[   18.668447] 
+[   18.668447]  htt_alloc_peer_map_mem : Flush Interval Configured to 256 pkts
+[   18.677944] CE_pkt_dl_len_set CE 4 Pkt download length 64
+[   18.682380] ol_txrx_pdev_attach: 1424 tx desc's allocated ; range starts from d8010000
+[   18.690502] HTC Service:0x0100 ep:2 TX flow control disabled
+[   18.696626] wmi_service_ready_event_rx:  WMI UNIFIED SERVICE READY event 
+[   18.702655] Firmware_Build_Number:0 
+[   18.706185] host/RAM_fw Build Ver Mismatch: H:0x5C, F:0x0 ! 
+[   18.711840] num_rf_chain:0x00000001  ht_cap_info:0x0000085b  vht_cap_info:0x338001b2  vht_supp_mcs:0x0000fffe
+[   18.721711] 
+[   18.721743]  RES CFG Support wmi_service_bitmap 874a 
+[   18.728241] 
+[   18.728241]  Sending Ext resource cfg: HOST PLATFORM as 1 and fw_feature_bitmap as 50 to TGT 
+[   18.738050] ol_ath_service_ready_event: tt_support: 0
+[   18.743267] ol_ath_service_ready_event: periodic_chan_stats: 1
+[   18.749078] ol_ath_service_ready_event: sw_cal_support_check_flag: 0
+[   18.755420] LARGE_AP enabled. num_peers 144, num_vdevs 16, num_tids 256
+[   18.762011] idx 0 req 1  num_units 0 num_unit_info 2 unit size 404 actual units 145 
+[   18.769790] ol_ath_alloc_host_mem_chunk req_id 1 idx 0 num_units 145 unit_len 404,
+[   18.777288] chunk 0 len 58580 requested ,ptr  0x59530000 
+[   18.789534] FIRMWARE:P 145 V 16 T 443
+[   18.789534]  
+[   18.794814] wmi_ready_event_rx:  WMI UNIFIED READY event 
+[   18.799218] ol_ath_connect_htc() WMI is ready
+[   18.803498] htt_h2t_frag_desc_bank_cfg_msg - HTT_H2T_MSG_TYPE_FRAG_DESC_BANK_CFG sent to FW for radio ID = 2
+[   18.818369] ol_ath_attach() connect HTC. 
+[   18.821305] bypasswmi : 0
+[   18.823930] ol_regdmn_start: reg-domain param: regdmn=0, countryName=, wModeSelect=FFFFFFFF, netBand=FFFFFFFF, extendedChanMode=0.
+[   18.835676] target uses HTT version 2.2; host uses 2.2
+[   18.840893] Skipping VHT80 channel 5825
+[   18.845048] acfg_attach: 2892: Netlink socket created:ddd10a00
+[   18.850452] SPECTRAL : get_capability not registered
+[   18.855357] HAL_CAP_PHYDIAG : Capable
+[   18.859012] SPECTRAL : Need to fix the capablity check for RADAR (spectral_attach : 237)
+[   18.867072] SPECTRAL : get_capability not registered
+[   18.872008] HAL_CAP_RADAR   : Capable
+[   18.875663] SPECTRAL : Need to fix the capablity check for SPECTRAL
+[   18.875663]  (spectral_attach : 242)
+[   18.885473] SPECTRAL : get_capability not registered
+[   18.890440] HAL_CAP_SPECTRAL_SCAN : Capable
+[   18.894595] SPECTRAL : get_tsf64 not registered
+[   18.899125] spectral_init_netlink 78 NULL SKB
+[   18.903436] Green-AP : Green-AP : Attached
+[   18.903436] 
+[   18.908997] Green-AP : Attached
+[   18.912152] ol_if_dfs_attach: called; ptr=d8a91984, radar_info=ddd87c70
+[   18.918744] dfs_attach: event log enabled by default
+[   18.924211] ol_ath_attach() UMAC attach . 
+[   18.927772] 
+[   18.927772]  BURSTING enabled by default
+[   18.933177] ACS not enabled 
+[   18.935988] __ol_ath_attach: hard_header_len reservation 74
+[   18.943798] ol_ath_thermal_mitigation_attach: TT not supported in FW
+[   18.949172] ol_ath_pci_probe: PCI device id 0046 :0046
+[   18.954233] PCI: enabling device 0000:03:00.0 (0140 -> 0142)
+[   18.959981]  *********** Cascade *************
+[   18.964292] __ol_ath_attach: Creating netdev wifi1
+[   18.969197] 
+[   18.969197] __ol_ath_attach() Allocated scn d83004c0
+[   18.975507] ath_ol_pci 0000:03:00.0: ath DEBUG: sc=0xd9474000
+[   18.981255] 
+[   18.981255]  ol_ath_pci_configure : num_desired MSI set to 0
+[   18.988378] 
+[   18.988378]  Using PCI Legacy Interrupt
+[   18.993658] chip_id 0xa chip_revision 0x0 
+[   19.007091] 
+[   19.007091]  CLOCK PLL skipped 
+[   19.010652] HIF_PCIDeviceProbed: setting the target pll frac ffffffff intval ffffffff
+[   19.018494] HIF_PCIDeviceProbed: no frac provided, skipping pre-configuring PLL
+[   19.025773] HIF_PCIDeviceProbed: targ_clk is not provided, skipping pre-configuring PLL
+[   19.035801] __ol_ath_attach: dev name wifi1
+[   19.038956] ol_ath_attach interface_id 1
+[   19.042861] ol_target_init() BMI inited.
+[   19.046860] ol_target_init() BMI Get Target Info.
+[   19.051452] Chip id: 0xa, chip version: 0x1000000
+[   19.056138] 
+[   19.056138]  CE WAR Disabled
+[   19.060637] NUM_DEV=1 FWMODE=0x2 FWSUBMODE=0x0 FWBR_BUF 0
+[   19.066073] ol_target_init() configure Target .
+[   19.070509] 
+[   19.070509]  Target Version is 1000000
+[   19.075601] 
+[   19.075601]  Flash Download Address  c0000 
+[   19.081255] ol_transfer_bin_file: flash data file defined
+[   19.086722] ol_transfer_bin_file[3752] Get Caldata for wifi1.
+[   19.092502] __adf_os_fs_read[42], Open File /tmp/wifi1.caldata SUCCESS!!
+[   19.099125] file system magic:16914836 
+[   19.102874] super blocksize:4096 
+[   19.106310] inode 1886 
+[   19.108591] file size:12064 
+[   19.111590] ol_transfer_bin_file 3813: Download Flash data len 12064
+[   19.118025] Board extended Data download address: 0x0
+[   19.142955] 
+[   19.142955]  Board data initialized
+[   19.146985] ol_ath_download_firmware: Download OTP, flash download ADDRESS 0xc0000
+[   19.154482] 
+[   19.154482]  Selecting  OTP binary for CHIP Version 0
+[   19.168291] ol_transfer_bin_file 3623: downloading file 0, Download data len 9000
+[   19.204561] 
+[   19.204561]  First OTP send param 8000
+[   19.592814] [wifi2] FWLOG: [19034] WAL_DBGID_TX_AC_BUFFER_SET ( 0x3, 0x1e, 0x460, 0x460, 0x0 )
+[   19.600406] [wifi2] FWLOG: [19034] WAL_DBGID_TX_AC_BUFFER_SET ( 0x12, 0x1e, 0x460, 0x460, 0x0 )
+[   19.609090] [wifi2] FWLOG: [19034] WAL_DBGID_TX_AC_BUFFER_SET ( 0x45, 0x1e, 0x460, 0x460, 0x0 )
+[   19.617744] [wifi2] FWLOG: [19034] WAL_DBGID_TX_AC_BUFFER_SET ( 0x67, 0x1e, 0x460, 0x460, 0x0 )
+[   19.626460] [wifi2] FWLOG: [19036] WHAL_ERROR_RESET_PM (  )
+[   19.632021] [wifi2] FWLOG: [19041] WAL_DBGID_DEV_RESET ( 0x1, 0x1, 0x1 )
+[   21.420930] ol_ath_download_firmware :First OTP download and Execute is good address:0x400 return param 4660
+[   21.429803] ol_ath_download_firmware:##Board Id 1 , CHIP Id 0
+[   21.435645] ol_ath_download_firmware: BOARDDATA DOWNLOAD TO address 0xc0000
+[   21.442549] ol_transfer_bin_file: Board Data File download to address=0xc0000 file name=QCA9984/hw.1/mr53/boardData_QCA9984_CUS239_5G_v1_001.bin
+[   21.462730] ol_transfer_bin_file 3623: downloading file 3, Download data len 12064
+[   21.471852] Board extended Data download address: 0x0
+[   21.496188] ol_ath_download_firmware: Using 0x1234 for the remainder of init
+[   21.502249] 
+[   21.502249]  Selecting  OTP binary for CHIP Version 0
+[   21.515870] ol_transfer_bin_file 3623: downloading file 0, Download data len 9000
+[   21.555232] 
+[   21.555232]  [Flash] : Ignore Module param
+[   21.559887] 
+[   21.559887]  Second otp download Param 10000 
+[   23.785410] ol_ath_download_firmware : Second OTP download and Execute is good, param=0x0 
+[   23.792658] 
+[   23.792658]  Mission mode: Firmware CHIP Version 0
+[   23.806935] ol_swap_seg_alloc: Successfully allocated memory for SWAP size=262144 
+[   23.822461] Swap: bytes_left to copy: fw:16; dma_page:36244
+[   23.827085] Swap: wrong length read:0
+[   23.830677] ol_swap_wlan_memory_expansion: Swap total_bytes copied: 225900 Target address 422198 
+[   23.839737] scn=d83004c0  target_write_addr=422198 seg_info=de376a10 
+[   23.845923] ol_transfer_swap_struct:Code swap structure successfully downloaded for bin type =2 
+[   23.854732] bin_filename=QCA9984/hw.1/athwlan.bin swap_filename=/lib/firmware/QCA9984/hw.1/athwlan.codeswap.bin 
+[   23.864885] ol_transfer_bin_file: Downloading firmware file: QCA9984/hw.1/athwlan.bin
+[   23.880724] ol_transfer_bin_file 3623: downloading file 1, Download data len 374024
+[   25.107185] ol_target_init() Download FW done. 
+[   25.110746] ol_ath_attach() WMI attached. wmi_handle d9910000 
+[   25.116682] htc_wmi_init() HT Create . dcd84000
+[   25.121024] htc_wmi_init() HIF Claim.
+[   25.124742] htc_wmi_init 7732 host_enable 0 nss_nwifi_offload 0
+[   25.130584] ol_ath_set_default_tgt_config : AC Minfree buffer allocation through module param (umac.ko)
+[   25.139956]  OL_ACBKMinfree : 0
+[   25.143049]  OL_ACBEMinfree : 0
+[   25.146173]  OL_ACVIMinfree : 0
+[   25.149328]  OL_ACVOMinfree : 0
+[   25.153764] CE_recv_buf_enqueue 877 Populate last entry 512 for CE 5
+[   25.159075] CE_recv_buf_enqueue 886 CE 5 wi 511 dest_ptr 0x5a25e040 nbytes 0 recv_ctxt 0xd97ae240
+[   25.168103] Startup Mode-0 set
+[   25.170946] 
+[   25.170946] <=== cfg max peer id 1056 ====>
+[   25.179881] HTC Service:0x0300 ep:1 TX flow control disabled
+[   25.184692] htt_peer_map_timer_init Enter pdev d8e44000 hrtimer d8e46520
+[   25.191221] 
+[   25.191221]  htt_alloc_peer_map_mem : Alloc Success : host q vaddr d8897000 paddr 59d97000
+[   25.200937] 
+[   25.200937]  htt_alloc_peer_map_mem : Flush Interval Configured to 256 pkts
+[   25.210465] CE_pkt_dl_len_set CE 4 Pkt download length 64
+[   25.214870] ol_txrx_pdev_attach: 2500 tx desc's allocated ; range starts from d8940000
+[   25.223086] HTC Service:0x0100 ep:2 TX flow control disabled
+[   25.229147] wmi_service_ready_event_rx:  WMI UNIFIED SERVICE READY event 
+[   25.235145] Firmware_Build_Number:92 
+[   25.238800] num_rf_chain:0x00000004  ht_cap_info:0x0000185b  vht_cap_info:0x339b79f2  vht_supp_mcs:0x0000ffaa
+[   25.248672] 
+[   25.248672]  RES CFG Support wmi_service_bitmap 9778 
+[   25.255170] 
+[   25.255170]  Sending Ext resource cfg: HOST PLATFORM as 0 and fw_feature_bitmap as 50 to TGT 
+[   25.265010] ol_ath_service_ready_event: tt_support: 1
+[   25.270196] ol_ath_service_ready_event: periodic_chan_stats: 1
+[   25.276007] ol_ath_service_ready_event: sw_cal_support_check_flag: 1
+[   25.282349] Peer Caching Enabled ; num_peers = 257, num_active_peers = 52 num_tids = 104, num_vdevs = 17
+[   25.291815] Mesh Supported
+[   25.294501] idx 1 req 2  num_units 1 num_unit_info 12 unit size 256 actual units 53 
+[   25.302280] ol_ath_alloc_host_mem_chunk req_id 2 idx 0 num_units 53 unit_len 256,
+[   25.309715] idx 2 req 3  num_units 1 num_unit_info 12 unit size 1024 actual units 53 
+[   25.317557] ol_ath_alloc_host_mem_chunk req_id 3 idx 1 num_units 53 unit_len 1024,
+[   25.325054] idx 3 req 4  num_units 1 num_unit_info 12 unit size 4096 actual units 53 
+[   25.333020] ol_ath_alloc_host_mem_chunk req_id 4 idx 2 num_units 53 unit_len 4096,
+[   25.340424] idx 0 req 1  num_units 0 num_unit_info 2 unit size 2216 actual units 258 
+[   25.348391] ol_ath_alloc_host_mem_chunk req_id 1 idx 3 num_units 86 unit_len 2216,
+[   25.355920] ol_ath_alloc_host_mem_chunk req_id 1 idx 4 num_units 86 unit_len 2216,
+[   25.363448] ol_ath_alloc_host_mem_chunk req_id 1 idx 5 num_units 86 unit_len 2216,
+[   25.370915] idx 4 req 6  num_units 35 num_unit_info 0 unit size 3072 actual units 35 
+[   25.378756] ol_ath_alloc_host_mem_chunk req_id 6 idx 6 num_units 35 unit_len 3072,
+[   25.386254] idx 5 req 7  num_units 1 num_unit_info 0 unit size 12288 actual units 1 
+[   25.394001] ol_ath_alloc_host_mem_chunk req_id 7 idx 7 num_units 1 unit_len 12288,
+[   25.401562] idx 6 req 5  num_units 0 num_unit_info 2 unit size 1980 actual units 258 
+[   25.409465] ol_ath_alloc_host_mem_chunk req_id 5 idx 8 num_units 129 unit_len 1980,
+[   25.417119] ol_ath_alloc_host_mem_chunk req_id 5 idx 9 num_units 129 unit_len 1980,
+[   25.424617] chunk 0 len 13568 requested ,ptr  0x5a134000 
+[   25.430021] chunk 1 len 54272 requested ,ptr  0x59e30000 
+[   25.435395] chunk 2 len 217088 requested ,ptr  0x59ec0000 
+[   25.440862] chunk 3 len 190576 requested ,ptr  0x5a800000 
+[   25.446329] chunk 4 len 190576 requested ,ptr  0x5a840000 
+[   25.451796] chunk 5 len 190576 requested ,ptr  0x5a880000 
+[   25.457263] chunk 6 len 107520 requested ,ptr  0x59ea0000 
+[   25.462730] chunk 7 len 12288 requested ,ptr  0x59c38000 
+[   25.468134] chunk 8 len 255420 requested ,ptr  0x5a8c0000 
+[   25.473570] chunk 9 len 255420 requested ,ptr  0x5aa00000 
+[   25.479069] ol_ath_service_ready_event[4067] WAPI MBSSID 2 
+[   25.554045] wmi_ready_event_rx:  WMI UNIFIED READY event 
+[   25.558419] ol_ath_connect_htc() WMI is ready
+[   25.562761] htt_h2t_frag_desc_bank_cfg_msg - HTT_H2T_MSG_TYPE_FRAG_DESC_BANK_CFG sent to FW for radio ID = 1
+[   25.577600] ol_ath_attach() connect HTC. 
+[   25.580568] target uses HTT version 2.2; host uses 2.2
+[   25.585691] bypasswmi : 0
+[   25.588316] ol_regdmn_start: reg-domain param: regdmn=0, countryName=, wModeSelect=FFFFFFFF, netBand=FFFFFFFF, extendedChanMode=0.
+[   25.600093] Skipping VHT80 channel 5825
+[   25.605092] acfg_attach: Offload using existing sock ddd10a00
+[   25.609840] SPECTRAL : get_capability not registered
+[   25.614745] HAL_CAP_PHYDIAG : Capable
+[   25.618400] SPECTRAL : Need to fix the capablity check for RADAR (spectral_attach : 237)
+[   25.626491] SPECTRAL : get_capability not registered
+[   25.631427] HAL_CAP_RADAR   : Capable
+[   25.635051] SPECTRAL : Need to fix the capablity check for SPECTRAL
+[   25.635051]  (spectral_attach : 242)
+[   25.644892] SPECTRAL : get_capability not registered
+[   25.649828] HAL_CAP_SPECTRAL_SCAN : Capable
+[   25.653983] SPECTRAL : get_tsf64 not registered
+[   25.658512] spectral_init_netlink 78 NULL SKB
+[   25.662855] Green-AP : Green-AP : Attached
+[   25.662855] 
+[   25.668416] Green-AP : Attached
+[   25.671508] rate power table override is only supported for AR98XX
+[   25.677725] ol_if_dfs_attach: called; ptr=d8a51984, radar_info=ddd87c70
+[   25.684286] dfs_attach: event log enabled by default
+[   25.689940] ol_ath_attach() UMAC attach . 
+[   25.693314] 
+[   25.693314]  BURSTING enabled by default
+[   25.698719] ACS not enabled 
+[   25.701562] __ol_ath_attach: needed_headroom reservation 60
+[   25.712433] ol_ath_thermal_mitigation_attach: --
+[   25.716119] ol_ath_pci_probe: PCI device id 0046 :0046
+[   25.721180] PCI: enabling device 0000:05:00.0 (0140 -> 0142)
+[   25.726929]  *********** Cascade *************
+[   25.731271] __ol_ath_attach: Creating netdev wifi0
+[   25.736144] 
+[   25.736144] __ol_ath_attach() Allocated scn d96004c0
+[   25.742455] ath_ol_pci 0000:05:00.0: ath DEBUG: sc=0xd8d5f400
+[   25.748328] 
+[   25.748328]  ol_ath_pci_configure : num_desired MSI set to 0
+[   25.755326] 
+[   25.755326]  Using PCI Legacy Interrupt
+[   25.760606] chip_id 0xa chip_revision 0x0 
+[   25.774133] 
+[   25.774133]  CLOCK PLL skipped 
+[   25.777725] HIF_PCIDeviceProbed: setting the target pll frac ffffffff intval ffffffff
+[   25.785598] HIF_PCIDeviceProbed: no frac provided, skipping pre-configuring PLL
+[   25.792845] HIF_PCIDeviceProbed: targ_clk is not provided, skipping pre-configuring PLL
+[   25.802936] __ol_ath_attach: dev name wifi0
+[   25.806123] ol_ath_attach interface_id 0
+[   25.810059] ol_target_init() BMI inited.
+[   25.814026] ol_target_init() BMI Get Target Info.
+[   25.818619] Chip id: 0xa, chip version: 0x1000000
+[   25.823273] 
+[   25.823273]  CE WAR Disabled
+[   25.828022] NUM_DEV=1 FWMODE=0x2 FWSUBMODE=0x0 FWBR_BUF 0
+[   25.833364] ol_target_init() configure Target .
+[   25.837706] 
+[   25.837706]  Target Version is 1000000
+[   25.842705] 
+[   25.842705]  Flash Download Address  c0000 
+[   25.848391] ol_transfer_bin_file: flash data file defined
+[   25.853733] ol_transfer_bin_file[3752] Get Caldata for wifi0.
+[   25.859637] __adf_os_fs_read[42], Open File /tmp/wifi0.caldata SUCCESS!!
+[   25.866166] file system magic:16914836 
+[   25.869978] super blocksize:4096 
+[   25.873258] inode 2629 
+[   25.875695] file size:12064 
+[   25.881693] ol_transfer_bin_file 3813: Download Flash data len 12064
+[   25.887191] Board extended Data download address: 0x0
+[   25.912464] 
+[   25.912464]  Board data initialized
+[   25.916494] ol_ath_download_firmware: Download OTP, flash download ADDRESS 0xc0000
+[   25.924148] 
+[   25.924148]  Selecting  OTP binary for CHIP Version 0
+[   25.940893] ol_transfer_bin_file 3623: downloading file 0, Download data len 9000
+[   25.978662] 
+[   25.978694]  First OTP send param 8000
+[   26.130334] [wifi1] FWLOG: [25939] WAL_DBGID_TX_AC_BUFFER_SET ( 0x3, 0x1e, 0x94c, 0x94c, 0x0 )
+[   26.137894] [wifi1] FWLOG: [25939] WAL_DBGID_TX_AC_BUFFER_SET ( 0x12, 0x1e, 0x94c, 0x94c, 0x0 )
+[   26.146610] [wifi1] FWLOG: [25939] WAL_DBGID_TX_AC_BUFFER_SET ( 0x45, 0x1e, 0x94c, 0x94c, 0x0 )
+[   26.155295] [wifi1] FWLOG: [25939] WAL_DBGID_TX_AC_BUFFER_SET ( 0x67, 0x1e, 0x94c, 0x94c, 0x0 )
+[   28.195032] ol_ath_download_firmware :First OTP download and Execute is good address:0x800 return param 4660
+[   28.203873] ol_ath_download_firmware:##Board Id 2 , CHIP Id 0
+[   28.209778] ol_ath_download_firmware: BOARDDATA DOWNLOAD TO address 0xc0000
+[   28.216588] ol_transfer_bin_file: Board Data File download to address=0xc0000 file name=QCA9984/hw.1/mr53/boardData_QCA9984_CUS260_2G_v1_002.bin
+[   28.236769] ol_transfer_bin_file 3623: downloading file 3, Download data len 12064
+[   28.243486] Board extended Data download address: 0x0
+[   28.269540] ol_ath_download_firmware: Using 0x1234 for the remainder of init
+[   28.275601] 
+[   28.275601]  Selecting  OTP binary for CHIP Version 0
+[   28.289409] ol_transfer_bin_file 3623: downloading file 0, Download data len 9000
+[   28.325929] 
+[   28.325929]  [Flash] : Ignore Module param
+[   28.330490] 
+[   28.330490]  Second otp download Param 10000 
+[   28.552608] Switching to Tx Mode-1 Threshold 280
+[   30.556138] ol_ath_download_firmware : Second OTP download and Execute is good, param=0x0 
+[   30.563542] 
+[   30.563542]  Mission mode: Firmware CHIP Version 0
+[   30.577756] ol_swap_seg_alloc: Successfully allocated memory for SWAP size=262144 
+[   30.596688] Swap: bytes_left to copy: fw:16; dma_page:36244
+[   30.601280] Swap: wrong length read:0
+[   30.604904] ol_swap_wlan_memory_expansion: Swap total_bytes copied: 225900 Target address 422198 
+[   30.614089] scn=d96004c0  target_write_addr=422198 seg_info=c18e3e10 
+[   30.620243] ol_transfer_swap_struct:Code swap structure successfully downloaded for bin type =2 
+[   30.628928] bin_filename=QCA9984/hw.1/athwlan.bin swap_filename=/lib/firmware/QCA9984/hw.1/athwlan.codeswap.bin 
+[   30.639237] ol_transfer_bin_file: Downloading firmware file: QCA9984/hw.1/athwlan.bin
+[   30.654889] ol_transfer_bin_file 3623: downloading file 1, Download data len 374024
+[   31.885785] ol_target_init() Download FW done. 
+[   31.889347] ol_ath_attach() WMI attached. wmi_handle db5d0000 
+[   31.895189] htc_wmi_init() HT Create . dcd85000
+[   31.899656] htc_wmi_init() HIF Claim.
+[   31.903498] htc_wmi_init 7732 host_enable 0 nss_nwifi_offload 0
+[   31.909215] ol_ath_set_default_tgt_config : AC Minfree buffer allocation through module param (umac.ko)
+[   31.918556]  OL_ACBKMinfree : 0
+[   31.921680]  OL_ACBEMinfree : 0
+[   31.924804]  OL_ACVIMinfree : 0
+[   31.927928]  OL_ACVOMinfree : 0
+[   31.932583] CE_recv_buf_enqueue 877 Populate last entry 512 for CE 5
+[   31.937956] CE_recv_buf_enqueue 886 CE 5 wi 511 dest_ptr 0x5970d840 nbytes 0 recv_ctxt 0xd8e133c0
+[   31.947328] Startup Mode-0 set
+[   31.949828] 
+[   31.949859] <=== cfg max peer id 1056 ====>
+[   31.955638] HTC Service:0x0300 ep:1 TX flow control disabled
+[   31.961355] htt_peer_map_timer_init Enter pdev d8214000 hrtimer d8216520
+[   31.967822] 
+[   31.967822]  htt_alloc_peer_map_mem : Alloc Success : host q vaddr d8299000 paddr 59799000
+[   31.977600] 
+[   31.977600]  htt_alloc_peer_map_mem : Flush Interval Configured to 256 pkts
+[   31.987285] CE_pkt_dl_len_set CE 4 Pkt download length 64
+[   31.991721] ol_txrx_pdev_attach: 2500 tx desc's allocated ; range starts from d92e0000
+[   32.000062] HTC Service:0x0100 ep:2 TX flow control disabled
+[   32.005873] wmi_service_ready_event_rx:  WMI UNIFIED SERVICE READY event 
+[   32.011965] Firmware_Build_Number:92 
+[   32.015588] num_rf_chain:0x00000004  ht_cap_info:0x0000185b  vht_cap_info:0x339b79f2  vht_supp_mcs:0x0000ffaa
+[   32.025492] 
+[   32.025492]  RES CFG Support wmi_service_bitmap 9778 
+[   32.032021] 
+[   32.032021]  Sending Ext resource cfg: HOST PLATFORM as 0 and fw_feature_bitmap as 52 to TGT 
+[   32.041830] ol_ath_service_ready_event: tt_support: 1
+[   32.047016] ol_ath_service_ready_event: periodic_chan_stats: 1
+[   32.052827] ol_ath_service_ready_event: sw_cal_support_check_flag: 1
+[   32.059169] Peer Caching Enabled ; num_peers = 257, num_active_peers = 52 num_tids = 104, num_vdevs = 17
+[   32.068634] Mesh Supported
+[   32.071321] idx 1 req 2  num_units 1 num_unit_info 12 unit size 256 actual units 53 
+[   32.079069] ol_ath_alloc_host_mem_chunk req_id 2 idx 0 num_units 53 unit_len 256,
+[   32.086504] idx 2 req 3  num_units 1 num_unit_info 12 unit size 1024 actual units 53 
+[   32.094376] ol_ath_alloc_host_mem_chunk req_id 3 idx 1 num_units 53 unit_len 1024,
+[   32.101874] idx 3 req 4  num_units 1 num_unit_info 12 unit size 4096 actual units 53 
+[   32.109840] ol_ath_alloc_host_mem_chunk req_id 4 idx 2 num_units 53 unit_len 4096,
+[   32.117244] idx 0 req 1  num_units 0 num_unit_info 2 unit size 2216 actual units 258 
+[   32.125179] ol_ath_alloc_host_mem_chunk req_id 1 idx 3 num_units 86 unit_len 2216,
+[   32.132739] ol_ath_alloc_host_mem_chunk req_id 1 idx 4 num_units 86 unit_len 2216,
+[   32.140268] ol_ath_alloc_host_mem_chunk req_id 1 idx 5 num_units 86 unit_len 2216,
+[   32.147735] idx 4 req 6  num_units 35 num_unit_info 0 unit size 3072 actual units 35 
+[   32.155607] ol_ath_alloc_host_mem_chunk req_id 6 idx 6 num_units 35 unit_len 3072,
+[   32.163074] idx 5 req 7  num_units 1 num_unit_info 0 unit size 12288 actual units 1 
+[   32.170821] ol_ath_alloc_host_mem_chunk req_id 7 idx 7 num_units 1 unit_len 12288,
+[   32.178350] idx 6 req 5  num_units 0 num_unit_info 2 unit size 1980 actual units 258 
+[   32.186285] ol_ath_alloc_host_mem_chunk req_id 5 idx 8 num_units 129 unit_len 1980,
+[   32.193908] ol_ath_alloc_host_mem_chunk req_id 5 idx 9 num_units 129 unit_len 1980,
+[   32.201468] chunk 0 len 13568 requested ,ptr  0x5ab74000 
+[   32.206841] chunk 1 len 54272 requested ,ptr  0x590c0000 
+[   32.212214] chunk 2 len 217088 requested ,ptr  0x59100000 
+[   32.217681] chunk 3 len 190576 requested ,ptr  0x59140000 
+[   32.223149] chunk 4 len 190576 requested ,ptr  0x59180000 
+[   32.228616] chunk 5 len 190576 requested ,ptr  0x591c0000 
+[   32.234083] chunk 6 len 107520 requested ,ptr  0x590e0000 
+[   32.239550] chunk 7 len 12288 requested ,ptr  0x5af0c000 
+[   32.244923] chunk 8 len 255420 requested ,ptr  0x59200000 
+[   32.250421] chunk 9 len 255420 requested ,ptr  0x59240000 
+[   32.255888] ol_ath_service_ready_event[4067] WAPI MBSSID 2 
+[   32.330146] 
+[   32.330146] !!!!! {/usr/bin/list_updater} reading /tmp/brain_state failed [2]: No such file or directory
+[   32.340237] wmi_ready_event_rx:  WMI UNIFIED READY event 
+[   32.345673] ol_ath_connect_htc() WMI is ready
+[   32.349859] htt_h2t_frag_desc_bank_cfg_msg - HTT_H2T_MSG_TYPE_FRAG_DESC_BANK_CFG sent to FW for radio ID = 0
+[   32.364854] ol_ath_attach() connect HTC. 
+[   32.367853] target uses HTT version 2.2; host uses 2.2
+[   32.373008] bypasswmi : 0
+[   32.375601] ol_regdmn_start: reg-domain param: regdmn=0, countryName=, wModeSelect=FFFFFFFF, netBand=FFFFFFFF, extendedChanMode=0.
+[   32.387597] acfg_attach: Offload using existing sock ddd10a00
+[   32.393064] SPECTRAL : get_capability not registered
+[   32.398000] HAL_CAP_PHYDIAG : Capable
+[   32.401655] SPECTRAL : Need to fix the capablity check for RADAR (spectral_attach : 237)
+[   32.409746] SPECTRAL : get_capability not registered
+[   32.414651] HAL_CAP_RADAR   : Capable
+[   32.418306] SPECTRAL : Need to fix the capablity check for SPECTRAL
+[   32.418306]  (spectral_attach : 242)
+[   32.428147] SPECTRAL : get_capability not registered
+[   32.433083] HAL_CAP_SPECTRAL_SCAN : Capable
+[   32.437238] SPECTRAL : get_tsf64 not registered
+[   32.441861] spectral_init_netlink 78 NULL SKB
+[   32.446204] Green-AP : Green-AP : Attached
+[   32.446204] 
+[   32.451671] Green-AP : Attached
+[   32.454764] rate power table override is only supported for AR98XX
+[   32.461074] ol_if_dfs_attach: called; ptr=d8ac1984, radar_info=ddd87c70
+[   32.467510] dfs_attach: event log enabled by default
+[   32.472852] ol_ath_attach() UMAC attach . 
+[   32.476538] 
+[   32.476538]  BURSTING enabled by default
+[   32.482099] ACS not enabled 
+[   32.484786] __ol_ath_attach: needed_headroom reservation 60
+[   32.493783] 
+[   32.493814] !!!!! {/usr/bin/config_updater} opening /click/mtun3_srv_state/mtunnel_state failed: No such file or directory
+[   32.494064] ol_ath_thermal_mitigation_attach: --
+[   32.501562] ath_rate_atheros: module license 'Proprietary' taints kernel.
+[   32.507185] ath_rate_atheros: Copyright (c) 2001-2005 Atheros Communications, Inc, All Rights Reserved
+[   32.514526] ath_dev: module license 'Proprietary' taints kernel.
+[   32.519056] ath_dev: Copyright (c) 2001-2007 Atheros Communications, Inc, All Rights Reserved
+[   32.525492] ath_pktlog: module license 'unspecified' taints kernel.
+[   32.528178]  pktlog_init: Initializing Pktlog for AR900B, pktlog_hdr_size = 16
+[   32.528209]  pktlog_init: Initializing Pktlog for AR900B, pktlog_hdr_size = 16
+[   32.528209]  pktlog_init: Initializing Pktlog for AR9888, pktlog_hdr_size = 12
+[   32.781724] 
+[   32.781724] !!!!! {/usr/bin/brain} opening /click/wlan_event/driver_reload failed: No such file or directory
+[   32.826679] brain: unloading click config
+[   32.829865] brain: spring cleaning pages
+[   32.915338] [wifi0] FWLOG: [32819] WAL_DBGID_TX_AC_BUFFER_SET ( 0x3, 0x1e, 0x94c, 0x94c, 0x0 )
+[   32.922899] [wifi0] FWLOG: [32819] WAL_DBGID_TX_AC_BUFFER_SET ( 0x12, 0x1e, 0x94c, 0x94c, 0x0 )
+[   32.931583] [wifi0] FWLOG: [32819] WAL_DBGID_TX_AC_BUFFER_SET ( 0x45, 0x1e, 0x94c, 0x94c, 0x0 )
+[   32.940268] [wifi0] FWLOG: [32819] WAL_DBGID_TX_AC_BUFFER_SET ( 0x67, 0x1e, 0x94c, 0x94c, 0x0 )
+[   32.989753] [ol_ath_iw_setcountry][1733] *p=55, *(p+1)=53
+[   32.994189] isCountryCodeValid: EEPROM regdomain 0x0
+[   33.005560] wlan_vap_create : enter. devhandle=0xd96004c0, opmode=IEEE80211_M_HOSTAP, flags=0x0
+[   33.013370] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.020337] ieee80211_mbo_vattach:MBO Initialized 
+[   33.025148] wlan_vap_create : exit. devhandle=0xd96004c0, vap=0xd7e80000, opmode=IEEE80211_M_HOSTAP, flags=0x0.
+[   33.051296] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.057450] ieee80211_mbo_vattach:MBO Initialized 
+[   33.077913] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.083973] ieee80211_mbo_vattach:MBO Initialized 
+[   33.099750] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.105935] ieee80211_mbo_vattach:MBO Initialized 
+[   33.125460] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.131646] ieee80211_mbo_vattach:MBO Initialized 
+[   33.150890] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.157263] ieee80211_mbo_vattach:MBO Initialized 
+[   33.177600] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.183661] ieee80211_mbo_vattach:MBO Initialized 
+[   33.204029] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.210184] ieee80211_mbo_vattach:MBO Initialized 
+[   33.230084] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.236207] ieee80211_mbo_vattach:MBO Initialized 
+[   33.255888] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.261980] ieee80211_mbo_vattach:MBO Initialized 
+[   33.282349] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.288534] ieee80211_mbo_vattach:MBO Initialized 
+[   33.310902] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.317213] ieee80211_mbo_vattach:MBO Initialized 
+[   33.337738] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.343798] ieee80211_mbo_vattach:MBO Initialized 
+[   33.364292] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.370509] ieee80211_mbo_vattach:MBO Initialized 
+[   33.390253] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.396376] ieee80211_mbo_vattach:MBO Initialized 
+[   33.415463] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.421618] ieee80211_mbo_vattach:MBO Initialized 
+[   33.426273] ol_txrx_set_mesh_mode val 1 
+[   33.443049] wlan_vap_create : enter. devhandle=0xd96004c0, opmode=IEEE80211_M_MONITOR, flags=0x0
+[   33.451265] wlan_vap_create : exit. devhandle=0xd96004c0, vap=0xd7788000, opmode=IEEE80211_M_MONITOR, flags=0x0.
+[   33.482599] [ol_ath_iw_setcountry][1733] *p=55, *(p+1)=53
+[   33.487035] isCountryCodeValid: EEPROM regdomain 0x0
+[   33.492002] Skipping VHT80 channel 5825
+[   33.507122] wlan_vap_create : enter. devhandle=0xd83004c0, opmode=IEEE80211_M_HOSTAP, flags=0x0
+[   33.514839] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.521868] ieee80211_mbo_vattach:MBO Initialized 
+[   33.526741] wlan_vap_create : exit. devhandle=0xd83004c0, vap=0xd7878000, opmode=IEEE80211_M_HOSTAP, flags=0x0.
+[   33.552046] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.558106] ieee80211_mbo_vattach:MBO Initialized 
+[   33.577819] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.583973] ieee80211_mbo_vattach:MBO Initialized 
+[   33.602749] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.608997] ieee80211_mbo_vattach:MBO Initialized 
+[   33.628491] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.634707] ieee80211_mbo_vattach:MBO Initialized 
+[   33.653077] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.659356] ieee80211_mbo_vattach:MBO Initialized 
+[   33.679475] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.685598] ieee80211_mbo_vattach:MBO Initialized 
+[   33.704092] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.710340] ieee80211_mbo_vattach:MBO Initialized 
+[   33.731458] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.737769] ieee80211_mbo_vattach:MBO Initialized 
+[   33.758013] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.764167] ieee80211_mbo_vattach:MBO Initialized 
+[   33.780880] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.787160] ieee80211_mbo_vattach:MBO Initialized 
+[   33.809840] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.815870] ieee80211_mbo_vattach:MBO Initialized 
+[   33.833270] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.839362] ieee80211_mbo_vattach:MBO Initialized 
+[   33.859481] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.865666] ieee80211_mbo_vattach:MBO Initialized 
+[   33.884379] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.890565] ieee80211_mbo_vattach:MBO Initialized 
+[   33.911527] su bfee 0 mu bfee 0 su bfer 0 mu bfer 0 impl bf 1 sounding dim 0
+[   33.917744] ieee80211_mbo_vattach:MBO Initialized 
+[   33.922430] ol_txrx_set_mesh_mode val 1 
+[   33.940518] wlan_vap_create : enter. devhandle=0xd83004c0, opmode=IEEE80211_M_MONITOR, flags=0x0
+[   33.948516] wlan_vap_create : exit. devhandle=0xd83004c0, vap=0xd78c8000, opmode=IEEE80211_M_MONITOR, flags=0x0.
+[   33.968384] brain: loading click config
+[   34.732271] OL vap_start -
+[   34.738363] vap-15(mesh0):set SIOC80211NWID, 9 characters
+[   34.742736]  
+[   34.742767]  DES SSID SET=fast-mesh 
+[   34.749796] Setting Tx Encap type to 0 (Raw)
+[   34.754701] Setting Rx Decap type to 0 (Raw)
+[   34.797844] OL vap_start -
+[   34.803811] vap-15(mesh1):set SIOC80211NWID, 9 characters
+[   34.808216]  
+[   34.808216]  DES SSID SET=fast-mesh 
+[   34.818244] Setting Tx Encap type to 0 (Raw)
+[   34.823180] Setting Rx Decap type to 0 (Raw)
+[   34.901811] [ol_ath_iw_setcountry][1733] *p=55, *(p+1)=53
+[   34.906185] isCountryCodeValid: EEPROM regdomain 0x0
+[   34.911246] Skipping VHT80 channel 5825
+[   34.922243] wlan_vap_create : enter. devhandle=0xdce404c0, opmode=IEEE80211_M_HOSTAP, flags=0x1001
+[   34.930427] ieee80211_mbo_vattach:MBO Initialized 
+[   34.935207] enabling promiscuos bit
+[   34.938612] wlan_vap_create : exit. devhandle=0xdce404c0, vap=0xd71b0000, opmode=IEEE80211_M_HOSTAP, flags=0x1001.
+[   34.960855] vap-0(mon2):set SIOC80211NWID, 10 characters
+[   34.965135]  
+[   34.965135]  DES SSID SET=specialvap 
+[   35.001718] [wifi0] FWLOG: [35279] WAL channel change freq=2412, mode=2 flags=0 rx_ok=1 tx_ok=1
+[   35.016619] OL vap_start -
+[   35.036488] ol_ath_vap_set_param: Now supported MGMT RATE is 1000(kbps) and rate code: 0x43
+[   35.043798] ol_ath_vap_set_param: Now supported MGMT RATE is 1000(kbps) and rate code: 0x43
+[   35.063323] device wifi2 entered promiscuous mode
+[   35.075945]  
+[   35.075945]  DES SSID SET= 
+[   35.082911]  
+[   35.082911]  DES SSID SET= 
+[   35.133895] [wifi1] FWLOG: [35406] WAL channel change freq=5180, mode=0 flags=0 rx_ok=1 tx_ok=1
+[   35.140987]  
+[   35.140987]  DES SSID SET= 
+[   35.141330]  
+[   35.141330]  DES SSID SET= 
+[   35.277413]  
+[   35.277413]  DES SSID SET= 
+[   35.281037]  
+[   35.281037]  DES SSID SET= 
+[   35.324117]  
+[   35.324117]  DES SSID SET= 
+[   35.327928]  
+[   35.327928]  DES SSID SET= 
+[   35.333676] Switching to Tx Mode-1 Threshold 280
+[   35.375507]  
+[   35.375538]  DES SSID SET= 
+[   35.379506]  
+[   35.379506]  DES SSID SET= 
+[   35.423398]  
+[   35.423398]  DES SSID SET= 
+[   35.427397]  
+[   35.427397]  DES SSID SET= 
+[   35.466572]  
+[   35.466572]  DES SSID SET= 
+[   35.470196]  
+[   35.470196]  DES SSID SET= 
+[   35.515495]  
+[   35.515526]  DES SSID SET= 
+[   35.519368]  
+[   35.519400]  DES SSID SET= 
+[   35.561793]  
+[   35.561793]  DES SSID SET= 
+[   35.565479]  
+[   35.565479]  DES SSID SET= 
+[   35.594564] [wifi2] FWLOG: [35563] WHAL_ERROR_RESET_CHANNF1 (  )
+[   35.610871]  
+[   35.610871]  DES SSID SET= 
+[   35.614526]  
+[   35.614526]  DES SSID SET= 
+[   35.656232]  
+[   35.656232]  DES SSID SET= 
+[   35.659981]  
+[   35.659981]  DES SSID SET= 
+[   35.701124]  
+[   35.701124]  DES SSID SET= 
+[   35.704810]  
+[   35.704810]  DES SSID SET= 
+[   35.749578]  
+[   35.749578]  DES SSID SET= 
+[   35.753233]  
+[   35.753233]  DES SSID SET= 
+[   35.798719]  
+[   35.798719]  DES SSID SET= 
+[   35.802405]  
+[   35.802405]  DES SSID SET= 
+[   35.841705]  
+[   35.841705]  DES SSID SET= 
+[   35.845517]  
+[   35.845517]  DES SSID SET= 
+[   49.620556] 
+[   49.620556] !!!!! {/usr/bin/brain} forkexec failed with status 255 cmd -iwpriv mon0 packet_counter 0 
+[   49.635551] 
+[   49.635551] !!!!! {/usr/bin/brain} forkexec failed with status 255 cmd -iwpriv mon1 packet_counter 0 
+[   49.647828] 
+[   49.647828] !!!!! {/usr/bin/brain} forkexec failed with status 255 cmd -iwpriv mon2 packet_counter 0 
+[   49.659606] device wired0 entered promiscuous mode
+[   49.663542] device eth1 entered promiscuous mode
+[   49.668041] device eth2 entered promiscuous mode
+[   49.672696] device eth3 entered promiscuous mode
+[   49.679881] device wired1 entered promiscuous mode
+[   49.692408] 
+[   49.692408] !!!!! {/usr/bin/brain} forkexec failed with status 255 cmd -iwpriv wifi0 acktimeout 48 
+[   49.704935] 
+[   49.704935] !!!!! {/usr/bin/brain} forkexec failed with status 255 cmd -iwpriv wifi1 acktimeout 48 
+[   49.742861] Resetting spectral chainmask to Rx chainmask
+[   49.749984] ol_ath_ucfg_setparam[233] PARAM_SENS_LEVEL 
+[   49.754451] 
+[   49.754451] !!!!! {/usr/bin/brain} set wlan_rx_sop_r0 to -95, ret = 0
+[   49.762699] ol_ath_ucfg_setparam[248] PARAM_CCA_THRESHOLD 
+[   49.768509] 
+[   49.768509] !!!!! {/usr/bin/brain} set wlan_cca_threshold_r0 to -64, ret = 0
+[   49.780506] Resetting spectral chainmask to Rx chainmask
+[   49.787472] ol_ath_ucfg_setparam[233] PARAM_SENS_LEVEL 
+[   49.791877] 
+[   49.791877] !!!!! {/usr/bin/brain} set wlan_rx_sop_r1 to -95, ret = 0
+[   49.800374] ol_ath_ucfg_setparam[248] PARAM_CCA_THRESHOLD 
+[   49.805373] 
+[   49.805373] !!!!! {/usr/bin/brain} set wlan_cca_threshold_r1 to -64, ret = 0
+[   49.819806] ol_ath_ucfg_setparam[233] PARAM_SENS_LEVEL 
+[   49.824336] 
+[   49.824336] !!!!! {/usr/bin/brain} set wlan_rx_sop_r2 to -95, ret = 0
+[   49.832521] ol_ath_ucfg_setparam[248] PARAM_CCA_THRESHOLD 
+[   49.837831] 
+[   49.837831] !!!!! {/usr/bin/brain} set wlan_cca_threshold_r2 to -64, ret = 0
+[   49.992502] wmi_dbg_cfg_send: mod[0]00000000 dbgcfg50000000 cfgvalid[0] 00000000 cfgvalid[1] 00000000
+[   50.005154] [wifi0] FWLOG: [50459] WAL_DBGID_SECURITY_MCAST_KEY_SET ( 0x2 )
+[   50.011121] [wifi0] cfg valid value inside module enable 400000wmi_dbg_cfg_send: mod[0]00000000 dbgcfg00000000 cfgvalid[0] 00400000 cfgvalid[1] 00000000
+[   50.024742] FWLOG: [50459] WAL_DBGID_SECURITY_MCAST_KEY_SET ( 0x3 )
+[   50.030959] [wifi0] FWLOG: [50659] WHAL_ERROR_CHIP_TEST1 ( 0xffffffa1 )
+[   50.041205] wmi_dbg_cfg_send: mod[0]00000000 dbgcfg50000000 cfgvalid[0] 00000000 cfgvalid[1] 00000000
+[   50.051483] cfg valid value inside module enable 400000wmi_dbg_cfg_send: mod[0]00000000 dbgcfg00000000 cfgvalid[0] 00400000 cfgvalid[1] 00000000
